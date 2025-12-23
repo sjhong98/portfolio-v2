@@ -8,19 +8,88 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  /* --font-pretendard-family: var(--font-pretendard); */
   --font-mono: var(--font-geist-mono);
+  --color-main: #0f172a;
+  --color-main-light: #121e42;
+  --color-font: #e2e8f0;
+  --color-sub-light: #cbd1d9;
+  --color-sub: #7e8ca1;
+  --color-sub-dark: #586271;
+  --color-sub-darker: #3f4555;
+  --color-sub-darkest: #17233e;
+  --color-text: #b2b8c2;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0f172a;
     --foreground: #ededed;
   }
 }
 
+/* 서버 사이드 렌더링에서도 폰트가 적용되도록 */
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-pretendard), -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+
+/* 웹킷 브라우저 (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-sub-darker);
+  border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-sub-darker);
+}
+
+/* scrollbar-px 클래스: 스크롤바 트랙 양쪽에 24px 패딩 효과 */
+/* 웹킷 스크롤바의 한계로 인해 트랙에 배경을 주고 thumb가 그 안에서만 보이도록 함 */
+.scrollbar-px::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+.scrollbar-px::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 수평 스크롤바: 좌우 24px 여백 - clip-path로 양쪽 24px 제거 */
+.scrollbar-px.overflow-x-scroll::-webkit-scrollbar,
+.scrollbar-px.overflow-x-auto::-webkit-scrollbar {
+  height: 3px;
+}
+
+.scrollbar-px.overflow-x-scroll::-webkit-scrollbar-thumb,
+.scrollbar-px.overflow-x-auto::-webkit-scrollbar-thumb {
+  background-color: var(--color-sub-darker);
+  border-radius: 2px;
+  clip-path: inset(0 24px);
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

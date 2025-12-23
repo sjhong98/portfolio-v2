@@ -1,65 +1,130 @@
-import Image from "next/image";
+'use client'
+
+import AboutDetail from "@/components/detail/aboutDetail";
+import About from "@/components/overview/about";
+import Contact from "@/components/overview/contact";
+import History from "@/components/overview/history";
+import Information from "@/components/overview/information";
+import Project from "@/components/overview/project";
+import Skill from "@/components/overview/skill";
+import Story from "@/components/overview/story";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
+import { useMode } from "@/hooks/useMode";
+import ProjectDetail from "@/components/detail/projectDetail";
+import { Drawer } from "@mui/material";
+import SkillDetail from "@/components/detail/skillDetail";
 
 export default function Home() {
+  const { mode, overviewTransparent, switchMode, lastMode } = useMode();
+
+  const content = (
+    <>
+      {/* about */}
+      <About />
+
+      {/* history */}
+      <History />
+
+      {/* project */}
+      <Project />
+
+      {/* skills */}
+      <Skill />
+
+      {/* story */}
+      {/* <Story /> */}
+
+      {/* contact */}
+      <Contact />
+    </>
+  )
+
+  const detail = lastMode === 'about' ? <AboutDetail />
+      : lastMode === 'project' ? <ProjectDetail />
+        : lastMode === 'skill' ? <SkillDetail />
+          : <></>
+
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className='sm:w-full w-screen flex sm:flex-row flex-col overflow-hidden justify-between gap-1'>
+
+      {/* Information */}
+      <Information />
+
+      {/* content */}
+      <div
+        className='w-full flex flex-col sm:h-[100vh] h-auto sm:overflow-y-scroll relative'
+      >
+        {/* pc */}
+        <div
+          style={{
+            paddingLeft: mode !== undefined ? '10%' : '50%',
+            paddingRight: mode !== undefined ? '55%' : '15%',
+            opacity: overviewTransparent ? 0.3 : 1,
+            transition: 'all 0.3s ease-in-out'
+          }}
+          className='w-full sm:flex hidden flex-col gap-28 scroll-smooth flex-shrink-0 w-full sm:py-20'
+          onClick={() => {
+            if (overviewTransparent) switchMode(undefined);
+          }}
+        >
+          {content}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* mobile */}
+        <div className='sm:hidden flex flex-col px-6 pt-40 gap-28'>
+          {content}
         </div>
-      </main>
+      </div>
+
+      {/* detail */}
+      <>
+
+        {/* pc */}
+        <div
+          style={{
+            left: mode !== undefined ? '50%' : '100%',
+            opacity: mode !== undefined ? 1 : 0,
+            transition: 'all 0.3s ease-in-out'
+          }}
+          className='absolute right-0 top-0 sm:py-20 h-screen overflow-y-scroll pr-[5%] w-[calc(50%-2px)] sm:block hidden'
+        >
+          {detail}
+        </div>
+
+        {/* mobile */}
+        <Drawer
+          className='sm:hidden flex flex-col gap-28'
+          open={mode !== undefined}
+          onClose={() => switchMode(undefined)}
+          anchor='right'
+          PaperProps={{
+            sx: {
+              backgroundColor: 'var(--color-main)',
+              padding: '24px',
+              paddingBottom: '100px',
+              paddingTop: '80px',
+
+            }
+          }}
+        >
+          {detail}
+        </Drawer>
+      </>
+
+      <button
+        style={{
+          opacity: mode !== undefined ? 1 : 0,
+          transition: 'all 0.3s ease-in-out',
+          cursor: mode !== undefined ? 'pointer' : 'default',
+          pointerEvents: mode !== undefined ? 'auto' : 'none',
+        }}
+        className='absolute left-[5%] top-[10%]'
+        onClick={() => switchMode(undefined)}
+      >
+        <ArrowBackIcon />
+      </button>
     </div>
   );
 }
