@@ -76,6 +76,7 @@ const mainContent = {
 App Router 활용 서버 컴포넌트, Server Actions, Middleware 기반 인증 구현, 렌더링 전략을 프로젝트 특성에 맞게 선택·적용함. 
 
 SEO 및 성능 최적화를 통한 서비스 개선에 익숙함.`,
+                    lines: 10,
                     level: 3
                 },
                 {
@@ -86,20 +87,29 @@ SEO 및 성능 최적화를 통한 서비스 개선에 익숙함.`,
 함수형 컴포넌트와 Hooks를 활용한 상태 관리 및 성능 최적화에 익숙하며, Context API, Zustand, Recoil 등 프로젝트 특성에 맞는 상태 관리 전략을 선택·적용함. 
 
 비즈니스 로직을 커스텀 훅으로 분리하고, 재사용 가능한 컴포넌트 설계를 통해 유지보수성을 높이는 개발에 익숙함.`,
+                    lines: 11,
                     level: 3
                 },
                 {
                     id: 2,
                     title: 'React Native',
-                    description: `3+ 프로젝트에서 Expo 기반 React Native 애플리케이션 개발 경험 보유.
+                    description: `4+ 프로젝트에서 Expo 기반 React Native 애플리케이션 개발 경험 보유.
 
-Expo Router를 활용한 파일 기반 라우팅과 React Navigation을 통한 네비게이션 구현에 익숙하며, 카메라, 이미지 피커, 푸시 알림, 위치 서비스 등 네이티브 모듈 통합 경험 보유. Reanimated와 Gesture Handler를 활용한 성능 최적화 및 플랫폼별 코드 분기(Platform.OS)를 통한 iOS/Android 대응 개발에 익숙함. EAS Build와 EAS Updates를 활용한 빌드 및 OTA 업데이트 관리 경험 보유.`,
+Expo Router, React Navigation 활용 라우팅에 익숙하며, 이미지 피커, 푸시 알림 등 네이티브 모듈 통합 경험 보유. 
+
+react-native-webview 활용 WebView 기반 콘텐츠 통합 경험 보유. JavaScript 주입, 네비게이션 제어, 쿠키 관리 등 WebView와 네이티브 간 통신 구현에 익숙함.
+
+EAS Build와 EAS Updates를 활용한 빌드 및 OTA 업데이트 관리 경험 보유.`,
+                    lines: 14,
                     level: 2
                 },
                 {
                     id: 3,
                     title: 'Vite',
-                    description: '',
+                    description: `Vite 기반 React 애플리케이션 개발 경험 보유.
+
+개발 서버 설정(host, port), TypeScript와 함께 사용하여 타입 안전성을 확보한 개발 경험.`,
+                    lines: 7,
                     level: 1
                 },
             ]
@@ -110,37 +120,67 @@ Expo Router를 활용한 파일 기반 라우팅과 React Navigation을 통한 �
                 {
                     id: 4,
                     title: 'Tailwind CSS',
-                    description: '',
+                    description: `7+ 프로젝트에서 Tailwind CSS를 활용한 스타일링 경험 보유.
+
+유틸리티 클래스 기반의 빠른 UI 개발에 익숙하며, 커스텀 테마 설정, 플러그인 확장을 통한 기능 확장 경험 보유. 
+
+prefix variant 활용한 반응형 구현과 이벤트 핸들링, CSS 변수를 통한 동적 테마 관리에 익숙함.`,
+                    lines: 10,
                     level: 3
                 },
                 {
                     id: 5,
                     title: 'Ant Design (Antd)',
-                    description: '',
+                    description: `Ant Design 기반 관리자 대시보드 및 복잡한 폼 UI 개발 경험 보유.
+
+Form, Table, Modal 등 핵심 컴포넌트 활용 데이터 관리 인터페이스 구현 경험. 
+
+복잡한 테이블 편집, 필터링, 정렬 기능 구현을 경험함.`,
+                    lines: 8,
                     level: 2
                 },
                 {
                     id: 6,
                     title: 'MUI',
-                    description: '',
+                    description: `4+ 프로젝트에서 MUI 활용 개발 경험 보유.
+
+Drawer, Modal, Dialog, Accordion 등 핵심 컴포넌트를 적극 활용한 빠른 UI 개발과 커스터마이징에 익숙함.
+
+ThemeProvider와 createTheme를 통한 디자인 시스템 구축 경험.`,
+                    lines: 8,
                     level: 2
                 },
                 {
                     id: 7,
                     title: 'Shadcn',
-                    description: '',
+                    description: `shadcn/ui 기반 컴포넌트 시스템 구축 경험 보유.
+
+Tailwind CSS와의 통합, 커스터마이징 가능한 컴포넌트 설계에 익숙함. 
+
+프로젝트별 요구사항에 맞춘 컴포넌트 확장 및 재사용 가능한 UI 라이브러리 구축 경험 보유.`,
+                    lines: 9,
                     level: 2
                 },
                 {
                     id: 8,
                     title: 'Radix UI',
-                    description: '',
+                    description: `Radix UI 프리미티브를 활용한 접근성 높은 컴포넌트 개발 경험 보유.
+
+AlertDialog, Popover, Select, Accordion 등 헤드리스 UI 컴포넌트 구현에 익숙하며, 키보드 네비게이션, 포커스 관리를 통한 통한 접근성 확보 경험 보유. 
+
+Tailwind CSS와 결합한 스타일링 및 커스텀 컴포넌트 확장에 익숙함.`,
+                    lines: 10,
                     level: 2
                 },
                 {
                     id: 9,
                     title: 'GSAP',
-                    description: '',
+                    description: `2+ 프로젝트에서 GSAP를 활용한 웹 애니메이션 구현 경험 보유.
+
+ScrollTrigger 플러그인을 활용한 스크롤 기반 애니메이션, Timeline을 통한 복잡한 애니메이션 시퀀스 제어, 성능 최적화된 애니메이션 구현 경험.
+
+Pin 애니메이션, 스크롤 기반 트리거, 반응형 애니메이션 대응 경험 보유.`,
+                    lines: 10,
                     level: 2
                 }
             ]
@@ -151,13 +191,23 @@ Expo Router를 활용한 파일 기반 라우팅과 React Navigation을 통한 �
                 {
                     id: 10,
                     title: 'Expo',
-                    description: '',
+                    description: `5+ 프로젝트에서 Expo 개발 경험 보유. 
+
+expo-router 활용 파일 기반 라우팅 구현, expo-dev-client로 커스텀 네이티브 모듈 개발 환경 구성. 
+
+expo-camera, expo-image-picker, expo-notifications 등 모듈 활용 및 플러그인 기반 네이티브 기능 통합 경험.`,
+                    lines: 9,
                     level: 2
                 },
                 {
                     id: 11,
                     title: 'EAS',
-                    description: '',
+                    description: `4+ 프로젝트에서 EAS 빌드/배포 경험 보유. 
+                    
+development / preview / production 프로파일 구성하여 iOS/Android 빌드 자동화 경험.
+
+EAS Update로 OTA 업데이트 배포 및 채널 기반 버전 관리. EAS Submit으로 앱스토어 제출 자동화 경험.`,
+                    lines: 9,
                     level: 2
                 }
             ]
@@ -168,25 +218,42 @@ Expo Router를 활용한 파일 기반 라우팅과 React Navigation을 통한 �
                 {
                     id: 12,
                     title: 'Recoil',
-                    description: '',
+                    description: `2+ 프로젝트에서 Recoil 전역 상태 관리 경험 보유. 
+                    
+atom 기반 상태 정의 및 useRecoilState/useRecoilValue 훅 활용. 
+
+RecoilRoot로 앱 전역 상태 관리, UI 상태/폼 데이터/모달 상태 등 다양한 상태 관리 구현 경험.`,
+                    lines: 9,
                     level: 2
                 },
                 {
                     id: 13,
                     title: 'Zustand',
-                    description: '',
+                    description: `Zustand 전역 상태 관리 경험 보유.
+
+create로 스토어 생성, 타입 안정성 있는 인터페이스 정의 경험.
+
+비동기 액션 구현, 전역 사용자 상태/조직 정보 관리 경험.`,
+                    lines: 8,
                     level: 2
                 },
                 {
                     id: 14,
                     title: 'React Context API',
-                    description: '',
+                    description: `8+ 프로젝트에서 React Context API 전역 상태 관리 경험 보유.
+
+createContext 컨텍스트 생성, Provider로 상태 제공 경험. 
+
+context를 custom hook과 연동하여 사용성 개선 경험. 
+
+인증/세션 관리, 라우팅 보호 로직, 토스트/로딩/모드 등 다양한 전역 상태 관리 구현.`,
+                    lines: 11,
                     level: 3
                 },
                 {
                     id: 15,
                     title: 'React Query',
-                    description: '',
+                    description: ``,
                     level: 1
                 }
             ]
@@ -197,13 +264,27 @@ Expo Router를 활용한 파일 기반 라우팅과 React Navigation을 통한 �
                 {
                     id: 16,
                     title: 'Next Auth',
-                    description: '',
+                    description: `Next Auth 인증 시스템 개발 경험.
+
+카카오/구글/네이버/애플 소셜 로그인 및 Credentials Provider 구현. 
+
+JWT 전략 사용, signIn/jwt/session 콜백 커스터마이징.
+
+getServerSession으로 서버 사이드 인증 체크, AuthGuard/GuestOnlyRoute 등 라우터 보호 패턴 구현 경험.`,
+                    lines: 11,
                     level: 2
                 },
                 {
                     id: 17,
                     title: 'Supabase Auth',
-                    description: '',
+                    description: `2 프로젝트에서 Supabase Auth 인증 시스템 개발 경험 보유.
+
+이메일/비밀번호 로그인, 사용자 정보 조회, checkSession으로 세션 체크 및 자동 갱신 구현 경험. 
+
+쿠키 기반 세션 관리, JWT 토큰 기반 DB 인스턴스 생성 경험. 
+
+Next.js 서버 액션('use server') 활용, 서버 사이드 인증 처리 경험.`,
+                    lines: 12,
                     level: 2
                 }
             ]
@@ -214,25 +295,43 @@ Expo Router를 활용한 파일 기반 라우팅과 React Navigation을 통한 �
                 {
                     id: 18,
                     title: 'Node.js',
-                    description: '',
+                    description: `Node.js 런타임 기반 백엔드 개발 경험 보유.
+                    
+Fastify 프레임워크 기반 서버 구축, AWS Lambda 서버리스 환경 배포, TypeScript 기반 API 개발 경험.`,
+                    lines: 6,
                     level: 3
                 },
                 {
                     id: 19,
                     title: 'Bun',
-                    description: '',
+                    description: `Bun 런타임 기반 백엔드 개발 경험 보유.
+
+Elysia 프레임워크 기반 서버 구축, Drizzle ORM 연동 및 AWS Elastic Beanstalk 배포 경험. 
+
+Node.js 대비 빠른 실행 속도로 인해 사용.`,
+                    lines: 8,
                     level: 3
                 },
                 {
                     id: 20,
                     title: 'Fastify',
-                    description: '',
+                    description: `3 프로젝트에서 Fastify 프레임워크 기반 API 서버 개발 경험 보유.
+
+AWS Lambda 서버리스 아키텍처 배포, 플러그인 기반 확장 구조 활용 경험.`,
+                    lines: 6,
                     level: 2
                 },
                 {
                     id: 21,
                     title: 'Elysia',
-                    description: '',
+                    description: `2 프로젝트에서 Elysia 프레임워크 기반 백엔드 개발 경험 보유.
+
+Bun 런타임과 함께 사용, Openapi, Swagger와 연동하여 TypeScript 기반 타입 안전 API 개발 경험. 
+
+Drizzle ORM 연동 및 RESTful API 설계 경험. 
+
+.group() 메서드로 라우트 모듈화, .derive()로 인증/권한 컨텍스트 확장 구현.`,
+                    lines: 12,
                     level: 3
                 }
             ]
@@ -243,43 +342,78 @@ Expo Router를 활용한 파일 기반 라우팅과 React Navigation을 통한 �
                 {
                     id: 22,
                     title: 'Supabase',
-                    description: '',
+                    description: `2 프로젝트에서 Supabase 기반 백엔드 개발 경험 보유.
+
+PostgreSQL 데이터베이스와 Supabase Auth 인증 시스템 활용, Drizzle ORM 연동 타입 안전 쿼리 작성 경험. 
+
+Next.js Server Actions 패턴과 통합, JWT 토큰 기반 세션 관리 및 자동 갱신 구현 경험.`,
+                    lines: 10,
                     level: 2
                 },
                 {
                     id: 23,
                     title: 'MySQL',
-                    description: '',
+                    description: `6 프로젝트에서 MySQL 데이터베이스 개발 경험 보유.
+
+AWS RDS 환경 배포, Knex.js/Objection.js/Drizzle ORM 등 다양한 ORM 활용 경험. 
+
+트랜잭션 처리, JOIN 쿼리 및 인덱스 최적화 경험. 서버리스 아키텍처(AWS Lambda)와 연동 경험.`,
+                    lines: 10,
                     level: 2
                 },
                 {
                     id: 24,
                     title: 'PostgreSQL',
-                    description: '',
+                    description: `PostgreSQL 데이터베이스 개발 경험 보유.
+
+Supabase 기반 PostgreSQL 및 Prisma ORM 활용 경험. 
+
+관계형 쿼리 및 집계 함수 활용 경험. Drizzle ORM으로 스키마 마이그레이션 및 타입 안전성 확보 경험.`,
+                    lines: 9,
                     level: 1
                 },
                 {
                     id: 25,
                     title: 'AWS RDS',
-                    description: '',
+                    description: `4 프로젝트에서 AWS RDS 데이터베이스 운영 경험 보유.
+
+MySQL/PostgreSQL 인스턴스 구성 경험. 타임존 설정 및 서버리스 아키텍처(AWS Lambda)와 연동 경험.`,
+                    lines: 7,
                     level: 2
                 },
                 {
                     id: 26,
                     title: 'Prisma',
-                    description: '',
-                    level: 3
+                    description: `Prisma ORM 기반 데이터베이스 개발 경험 보유.
+
+prisma pull로 스키마 동기화, 관계형 쿼리 및 집계 함수 활용 경험. 
+
+Elysia 프레임워크와 통합 경험.`,
+                    lines: 8,
+                    level: 2
                 },
                 {
                     id: 27,
                     title: 'Drizzle',
-                    description: '',
+                    description: `3 프로젝트에서 Drizzle ORM 기반 데이터베이스 개발 경험 보유.
+
+MySQL/PostgreSQL 지원, drizzle-kit pull로 스키마 자동 동기화 및 타입 안전성 확보 경험. 
+
+Elysia/Bun 런타임과 통합, join을 활용한 다중 테이블 조인 쿼리 작성 경험. 
+
+db.transaction()으로 트랜잭션 처리, and/eq/like/inArray 등 동적 쿼리 빌더 활용 경험. 
+
+sql 템플릿으로 집계 함수 사용, 스키마 파일 자동 업데이트 스크립트 작성 경험.`,
+                    lines: 15,
                     level: 3
                 },
                 {
                     id: 28,
                     title: 'Knex.js',
-                    description: '',
+                    description: `2 프로젝트에서 Knex.js 쿼리 빌더 활용 경험 보유.
+
+트랜잭션 처리, 동적 쿼리 빌더 및 서브쿼리 작성 경험.`,
+                    lines: 6,
                     level: 2
                 }
             ]
@@ -290,13 +424,23 @@ Expo Router를 활용한 파일 기반 라우팅과 React Navigation을 통한 �
                 {
                     id: 29,
                     title: 'OpenAPI',
-                    description: '',
+                    description: `3 프로젝트에서 OpenAPI 기반 타입 안전 API 개발 경험 보유. 
+                    
+openapi-typescript로 Swagger JSON에서 TypeScript 타입 자동 생성, openapi-fetch로 타입 안전한 API 호출 구현. 
+
+개발/프로덕션 환경별 스크립트로 타입 자동 업데이트, 프론트엔드-백엔드 간 API 스펙 동기화 경험.`,
+                    lines: 11,
                     level: 2
                 },
                 {
                     id: 30,
                     title: 'Swagger',
-                    description: '',
+                    description: `3 프로젝트에서 Swagger 기반 API 문서화 경험 보유. 
+                    
+Fastify/Elysia 프레임워크에서 Swagger 플러그인 활용해 OpenAPI 스펙 자동 생성, Swagger UI로 인터랙티브 문서 제공. 
+
+엔드포인트별 태그 분류 및 스펙 엔드포인트 노출로 프론트엔드-백엔드 협업 효율화 경험.`,
+                    lines: 9,
                     level: 2
                 }
             ]
@@ -307,43 +451,66 @@ Expo Router를 활용한 파일 기반 라우팅과 React Navigation을 통한 �
                 {
                     id: 31,
                     title: 'Vercel',
-                    description: '',
+                    description: `7+ 프로젝트에서 Vercel 기반 Next.js 프로덕션 배포 경험 보유. 
+
+Git 연동 자동 배포, 환경별 빌드 설정, 이미지 최적화 및 CDN 활용. Sentry 모니터링 연동 및 Cron Jobs 설정 경험.`,
+                    lines: 7,
                     level: 3
                 },
                 {
                     id: 32,
                     title: 'AWS EC2',
-                    description: '',
+                    description: `AWS EC2 인스턴스 구성 및 운영 경험 보유. 
+                    
+Nginx 연동, 서버 인스턴스 관리 및 애플리케이션 배포 경험.
+
+termius로 SSH 연동하여 관리 경험`,
+                    lines: 7,
                     level: 2
                 },
                 {
                     id: 33,
                     title: 'AWS Lambda',
-                    description: '',
+                    description: `5 프로젝트에서 AWS Lambda 서버리스 아키텍처 배포 경험 보유. 
+
+Serverless Framework로 Fastify 기반 API 배포 경험. 
+
+API Gateway 연동 및 CORS 설정 경험.`,
+                    lines: 8,
                     level: 2
                 },
                 {
                     id: 34,
                     title: 'AWS EB',
-                    description: '',
+                    description: `프로젝트에서 AWS Elastic Beanstalk 기반 배포 경험 보유. 
+
+Elysia/Bun 런타임 환경 구성.`,
+                    lines: 5,
                     level: 1
                 },
                 {
                     id: 35,
                     title: 'AWS S3',
-                    description: '',
+                    description: `7 프로젝트에서 AWS S3 기반 파일 스토리지 구현 경험 보유. 
+
+@aws-sdk/client-s3로 이미지/파일 업로드, Presigned URL로 클라이언트 직접 업로드.
+
+S3 Transfer Acceleration으로 전송 속도 향상. 버킷 정책 및 CORS 설정 경험.`,
+                    lines: 9,
                     level: 2
                 },
                 {
                     id: 36,
                     title: 'AWS Route 53',
-                    description: '',
+                    description: `AWS Route 53 기반 DNS 관리 경험.`,
+                    lines: 3,
                     level: 2
                 },
                 {
                     id: 37,
                     title: 'Cloudflare',
-                    description: '',
+                    description: `Cloudflare 기반 CDN 및 DNS 서비스 활용 경험 보유.`,
+                    lines: 4,
                     level: 2
                 }
             ]
@@ -354,7 +521,10 @@ Expo Router를 활용한 파일 기반 라우팅과 React Navigation을 통한 �
                 {
                     id: 38,
                     title: 'Sentry',
-                    description: '',
+                    description: `Sentry 기반 에러 모니터링 구축 경험 보유. 
+                    
+Session Replay로 사용자 행동 추적. ClickUp 웹훅 연동으로 에러 발생 시 자동 태스크 생성, 프로덕션 환경 모니터링 및 버그 추적 경험.`,
+                    lines: 7,
                     level: 2
                 }
             ]
@@ -365,49 +535,73 @@ Expo Router를 활용한 파일 기반 라우팅과 React Navigation을 통한 �
                 {
                     id: 39,
                     title: 'Git',
-                    description: '',
+                    description: `모든 프로젝트에서 Git 기반 버전 관리 경험 보유. 
+
+브랜치 전략(feature/bugfix/hotfix/release), 커밋 메시지 규칙(feat/fix/refactor 등) 경험.
+
+환경별 설정 분리 및 배포 자동화 스크립트 연동 경험.`,
+                    lines: 9,
                     level: 3
                 },
                 {
                     id: 40,
                     title: 'GitHub',
-                    description: '',
+                    description: `모든 프로젝트에서 GitHub 기반 버전 관리 및 협업 경험 보유. 
+
+저장소 관리, 이슈 트래킹. Vercel 등 CI/CD와 연동한 자동 배포, 팀 협업 워크플로우 경험.`,
+                    lines: 7,
                     level: 3
                 },
                 {
                     id: 41,
                     title: 'npm',
-                    description: '',
+                    description: `모든 프로젝트에서 npm 기반 패키지 관리 경험 보유. 
+
+package.json으로 의존성 관리, npm scripts로 빌드/배포/개발 스크립트 자동화, package-lock.json으로 버전 고정. 
+
+환경별 스크립트 분리 경험.`,
+                    lines: 8,
                     level: 3
                 },
                 {
                     id: 42,
                     title: 'Cursor',
-                    description: '',
+                    description: `Cursor IDE 기반 AI 보조 개발 활용 경험 보유. 
+
+.cursor/rules로 프로젝트별 컨텍스트 설정, AI 에이전트 효율 향상을 위한 규칙 정의.`,
+                    lines: 6,
                     level: 3
                 },
                 {
                     id: 43,
                     title: 'WebStorm',
-                    description: '',
+                    description: `WebStorm 기반 개발 활용 경험 보유.`,
+                    lines: 3,
                     level: 3
                 },
                 {
                     id: 44,
                     title: 'VS Code',
-                    description: '',
+                    description: `VS Code 기반 개발 활용 경험 보유.`,
+                    lines: 3,
                     level: 3
                 },
                 {
                     id: 45,
                     title: 'ClickUp',
-                    description: '',
+                    description: `Clickup 기반 협업 경험 보유.
+                    
+태스크 및 일정 관리를 통한 팀 협업 워크플로우 경험.`,
+                    lines: 5,
                     level: 3
                 },
                 {
                     id: 46,
                     title: 'Figma',
-                    description: '',
+                    description: `Figma 기반 디자인 협업 경험 보유.
+
+코드 생성 플러그인 적극 활용하여 빠른 개발 경험.`,
+                    lines: 5,
                     level: 3
                 }
             ]
