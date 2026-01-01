@@ -36,7 +36,7 @@ export const ModeProvider = ({ children }: { children: ReactNode }) => {
     }
 
     useEffect(() => {
-        if (mode === 'about' || mode === 'project') setOverviewTransparent(true);
+        if (mode === 'about' || mode === 'project' || mode === 'skill') setOverviewTransparent(true);
         else setOverviewTransparent(false);
     }, [mode])
 

@@ -7,8 +7,8 @@ export default function IndexDisplay() {
     return (
         <div className='flex flex-col gap-2 mt-10'>
             <IndexItem title='자기소개서' indexTitle='about' />
-            <IndexItem title='프로젝트' indexTitle='project' />
             <IndexItem title='스킬' indexTitle='skill' />
+            <IndexItem title='프로젝트' indexTitle='project' />
             <IndexItem title='연락처' indexTitle='contact' />
         </div>
     )

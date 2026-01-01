@@ -26,11 +26,11 @@ export default function Home() {
       {/* history */}
       <History />
 
-      {/* project */}
-      <Project />
-
       {/* skills */}
       <Skill />
+
+      {/* project */}
+      <Project />
 
       {/* story */}
       {/* <Story /> */}
@@ -41,9 +41,9 @@ export default function Home() {
   )
 
   const detail = lastMode === 'about' ? <AboutDetail />
-      : lastMode === 'project' ? <ProjectDetail />
-        : lastMode === 'skill' ? <SkillDetail />
-          : <></>
+    : lastMode === 'project' ? <ProjectDetail />
+      : lastMode === 'skill' ? <SkillDetail />
+        : <></>
 
 
   return (

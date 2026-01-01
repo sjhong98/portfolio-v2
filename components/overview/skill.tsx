@@ -24,7 +24,7 @@ export default function Skill() {
     };
 
     return (
-        <OverviewContainer className='flex flex-col gap-6 overflow-x-scroll' title='skill' threshold={0.7}>
+        <OverviewContainer className='flex flex-col gap-6 overflow-x-scroll mt-[-50px]' title='skill' threshold={0.7}>
             <h2 className='text-md font-bold text-sub'>Skills</h2>
             <div className='flex flex-row gap-8 w-full flex-wrap'>
                 <p className='text-[14px] sm:text-[16px] text-sub whitespace-pre-wrap break-keep leading-[25px]'>
