@@ -14,6 +14,7 @@ import { useMode } from "@/hooks/useMode";
 import ProjectDetail from "@/components/detail/projectDetail";
 import { Drawer } from "@mui/material";
 import SkillDetail from "@/components/detail/skillDetail";
+import Etc from "@/components/overview/etc";
 
 export default function Home() {
   const { mode, overviewTransparent, switchMode, lastMode } = useMode();
@@ -32,8 +33,8 @@ export default function Home() {
       {/* project */}
       <Project />
 
-      {/* story */}
-      {/* <Story /> */}
+      {/* etc */}
+      <Etc />
 
       {/* contact */}
       <Contact />
