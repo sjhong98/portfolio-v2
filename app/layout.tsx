@@ -80,7 +80,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${pretendard.variable} antialiased w-screen overflow-hidden`}
+        className={`${pretendard.variable} antialiased w-screen`}
         style={{ fontFamily: pretendard.style.fontFamily }}
       >
         <Providers>

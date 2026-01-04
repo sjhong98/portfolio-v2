@@ -75,7 +75,7 @@ export const InfiniteMovingCards = ({
       } else if (speed === "normal") {
         containerRef.current.style.setProperty("--animation-duration", "40s");
       } else {
-        containerRef.current.style.setProperty("--animation-duration", "60s");
+        containerRef.current.style.setProperty("--animation-duration", "70s");
       }
     }
   };
@@ -83,21 +83,23 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20 max-w-7xl overflow-hidden  !font-pretendard",
+        `scroller relative z-20 md:max-w-7xl max-w-screen overflow-hidden 
+        [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]
+        !font-pretendard`,
         className,
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
+          "flex w-max min-w-full shrink-0 flex-nowrap md:gap-10 gap-0 py-4",
           start && "animate-scroll",
-          // pauseOnHover && "hover:[animation-play-state:paused]",
+          pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
         {items.map((item, idx) => (
           <li
-            className="relative w-[200px] max-w-full shrink-0 rounded-2xl border border-b-0 px-8 py-6 md:w-[250px] md:h-[150px] border-zinc-700 bg-[linear-gradient(180deg,#27272a,#18181b)] overflow-hidden"
+            className="relative w-[200px] max-w-full shrink-0 rounded-2xl border border-b-0 px-8 py-6 md:w-[250px] md:scale-[1.1] md:ml-0 ml-[-24px] scale-[0.8] md:h-[150px] border-zinc-700 bg-[linear-gradient(180deg,#27272a,#18181b)] overflow-hidden"
             key={item.region1}
           >
             <blockquote>

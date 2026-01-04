@@ -26,6 +26,7 @@ export default function Project() {
     }
 
     const handleMouseLeave = () => {
+        console.log('handleMouseLeave')
         setIsHovered(false);
         setHoveredIndex(undefined);
     }
@@ -38,7 +39,7 @@ export default function Project() {
 
         if (isHovered) setOverviewTransparent(false);
         else setOverviewTransparent(true);
-    }, [isHovered, selectedProject])
+    }, [isHovered])
 
 
 
@@ -97,12 +98,13 @@ const ProjectItem = memo(function ProjectItem({ handleMouseEnter, handleMouseLea
 
     const [selected, setSelected] = useState(false);
 
-    const onClick = useCallback(() => {
+    const onClick = useCallback((e: any) => {
         if (mode !== 'project' && mode !== undefined) return;
 
         switchMode('project')
         setSelectedProject(value)
-    }, [value, switchMode, setSelectedProject])
+        e.stopPropagation();
+    }, [value, switchMode, setSelectedProject, mode, isHovered])
 
     useEffect(() => {
         if (isMobile) return;
@@ -123,7 +125,7 @@ const ProjectItem = memo(function ProjectItem({ handleMouseEnter, handleMouseLea
         }
 
         setSelected(_selected);
-    }, [isHovered, hoveredIndex, index, selectedProject, value])
+    }, [isHovered, hoveredIndex, index, selectedProject, value, mode])
 
     return (
         <div

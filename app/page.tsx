@@ -7,17 +7,21 @@ import History from "@/components/overview/history";
 import Information from "@/components/overview/information";
 import Project from "@/components/overview/project";
 import Skill from "@/components/overview/skill";
-import Story from "@/components/overview/story";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-import { useMode } from "@/hooks/useMode";
+import EtcDetail from "@/components/detail/etcDetail";
 import ProjectDetail from "@/components/detail/projectDetail";
-import { Drawer } from "@mui/material";
 import SkillDetail from "@/components/detail/skillDetail";
 import Etc from "@/components/overview/etc";
+import { useMode } from "@/hooks/useMode";
+import { Drawer, useMediaQuery } from "@mui/material";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const { mode, overviewTransparent, switchMode, lastMode } = useMode();
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
+  const [detailDisplay, setDetailDisplay] = useState<string>('none');
+  const [detailLeft, setDetailLeft] = useState<string>('100%');
 
   const content = (
     <>
@@ -44,11 +48,30 @@ export default function Home() {
   const detail = lastMode === 'about' ? <AboutDetail />
     : lastMode === 'project' ? <ProjectDetail />
       : lastMode === 'skill' ? <SkillDetail />
-        : <></>
+        : lastMode === 'etc' ? <EtcDetail />
+          : <></>
+
+
+  useEffect(() => {
+    if (mode !== undefined) {
+      setDetailDisplay('block');
+      setTimeout(() => {
+        setDetailLeft('50%');
+      }, 1);
+    }
+    else if (mode === undefined) {
+      document.body.style.overflow = 'hidden';
+      setDetailLeft('100%');
+      setTimeout(() => {
+        setDetailDisplay('none');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+  }, [mode])
 
 
   return (
-    <div className='sm:w-full w-screen flex sm:flex-row flex-col overflow-hidden justify-between gap-1'>
+    <div className='sm:w-full w-screen flex sm:flex-row flex-col justify-between gap-1'>
 
       {/* Information */}
       <Information />
@@ -85,9 +108,10 @@ export default function Home() {
         {/* pc */}
         <div
           style={{
-            left: mode !== undefined ? '50%' : '100%',
+            left: detailLeft,
+            display: isMobile ? 'none' : detailDisplay,
             opacity: mode !== undefined ? 1 : 0,
-            transition: 'all 0.3s ease-in-out'
+            transition: 'all 0.3s ease-in-out',
           }}
           className='absolute right-0 top-0 sm:py-20 h-screen overflow-y-scroll pr-[5%] w-[calc(50%-2px)] sm:block hidden'
         >
@@ -106,26 +130,12 @@ export default function Home() {
               padding: '24px',
               paddingBottom: '100px',
               paddingTop: '80px',
-
             }
           }}
         >
           {detail}
         </Drawer>
       </>
-
-      <button
-        style={{
-          opacity: mode !== undefined ? 1 : 0,
-          transition: 'all 0.3s ease-in-out',
-          cursor: mode !== undefined ? 'pointer' : 'default',
-          pointerEvents: mode !== undefined ? 'auto' : 'none',
-        }}
-        className='absolute left-[5%] top-[10%]'
-        onClick={() => switchMode(undefined)}
-      >
-        <ArrowBackIcon />
-      </button>
     </div>
   );
 }

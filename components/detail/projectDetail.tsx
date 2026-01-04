@@ -13,6 +13,7 @@ import { useDrawingArea } from "@mui/x-charts";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import { useMode } from "@/hooks/useMode";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 // 스킬을 카테고리별로 그룹화하는 함수
 function groupSkillsByCategory(skills: string[]) {
@@ -58,7 +59,7 @@ function groupSkillsByCategory(skills: string[]) {
 
 export default function ProjectDetail() {
     const { selectedProject } = useProject();
-    const { switchMode } = useMode();
+    const { mode, switchMode } = useMode();
 
     const [imageDialogOpen, setImageDialogOpen] = useState<number | undefined>(undefined);
     const [contributionsExpanded, setContributionsExpanded] = useState(false);
@@ -69,10 +70,28 @@ export default function ProjectDetail() {
         return groupSkillsByCategory(selectedProject.skills);
     }, [selectedProject?.skills]);
 
+    // 이미지만 필터링 (mov 파일 제외)
+    const imageAssets = useMemo(() => {
+        if (!selectedProject?.assets) return [];
+        return selectedProject.assets.filter((asset: string) => !asset.endsWith('.mov'));
+    }, [selectedProject?.assets]);
+
     return (
         <div>
+            <button
+                style={{
+                    opacity: mode !== undefined ? 1 : 0,
+                    transition: 'all 0.3s ease-in-out',
+                    cursor: mode !== undefined ? 'pointer' : 'default',
+                    pointerEvents: mode !== undefined ? 'auto' : 'none',
+                }}
+                className='absolute left-[0%] top-[5%]'
+                onClick={() => switchMode(undefined)}
+            >
+                <ArrowBackIcon />
+            </button>
             {selectedProject && (
-                <div key={selectedProject.title} className='flex flex-col gap-12'>
+                <div key={selectedProject.title} className='flex flex-col gap-12 pt-5'>
                     {/* close button */}
                     <div className='sm:hidden flex absolute left-6 top-7 cursor-pointer' onClick={() => switchMode(undefined)}>
                         <Close sx={{ fontSize: 30, color: 'var(--color-sub-light)' }} />
@@ -87,7 +106,7 @@ export default function ProjectDetail() {
 
                         {/* Assets */}
                         <div className='sm:h-[308px] h-[230px] overflow-x-scroll flex flex-row gap-4 sm:ml-0 ml-[-24px] sm:w-full w-[calc(100%+48px)] pb-2 sm:px-0 px-6 scrollbar-px'>
-                            {selectedProject.assets.filter((asset: string) => !asset.endsWith('.mov')).map((asset: string, index: number) => (
+                            {imageAssets.map((asset: string, index: number) => (
                                 <div key={asset} className="h-full w-fit flex-shrink-0">
                                     <Image
                                         key={asset}
@@ -276,14 +295,16 @@ export default function ProjectDetail() {
                 open={imageDialogOpen !== undefined}
                 onClose={() => setImageDialogOpen(undefined)}
             >
-                <DialogContent>
-                    <Image
-                        src={selectedProject.assets[imageDialogOpen ?? 0]}
-                        alt={selectedProject.assets[imageDialogOpen ?? 0]}
-                        width={500}
-                        height={500}
-                        className='h-[85vh] w-auto object-cover'
-                    />
+                <DialogContent sx={{ padding: 0 }}>
+                    {imageAssets[imageDialogOpen ?? 0] && (
+                        <Image
+                            src={imageAssets[imageDialogOpen ?? 0]}
+                            alt={imageAssets[imageDialogOpen ?? 0]}
+                            width={500}
+                            height={500}
+                            className='max-h-[85vh] max-w-[90vw] w-auto h-auto object-contain'
+                        />
+                    )}
                 </DialogContent>
             </Dialog>
         </div>

@@ -51,7 +51,7 @@ const sideProjects = {
             's: 카드 스택 구조와 에니메이션을 직접 구현',
         ],
         assets: [
-            `/assets/projects/자사 브랜딩 사이트/1.mov`,
+            `/assets/projects/자사 브랜딩 사이트/1.gif`,
             `/assets/projects/자사 브랜딩 사이트/1.png`,
             `/assets/projects/자사 브랜딩 사이트/2.png`,
             `/assets/projects/자사 브랜딩 사이트/3.png`,

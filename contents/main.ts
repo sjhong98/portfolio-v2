@@ -1,63 +1,74 @@
 const mainContent = {
-    about: `저는 1년 9개월 동안 아이비알도스에서 풀스택 개발자로 근무하며 총 5개의 서비스 개발과 2개의 사내 사이드 프로젝트에 참여했습니다. 
-모든 프로젝트에서 프론트엔드 개발을 수행하였고, 이 중 4개 프로젝트에서 백엔드까지 맡아 풀스택 역할을 수행했습니다.
+    about: `저는 1년 9개월 동안 웹·앱 기획·개발·운영 스타트업 아이비알도스에서 풀스택 개발자로 근무하며 총 4개의 서비스 개발과 3개의 사내 사이드 프로젝트에 참여했습니다. 총 7개 프로젝트에서 프론트엔드 개발을 담당했고, 이 중 4개 프로젝트에서 백엔드까지 담당하여 풀스택 개발을 진행했습니다.
 
-특히 2개 프로젝트는 기획 단계부터 참여하여 서비스 요구사항 정의, 기술 스택 선택, UI·UX 흐름 검토, DB 설계, 프로젝트 초기 세팅 등 서비스 구축 전 과정에 기여했습니다.
-또한 각 프로젝트에서 할당된 기능 개발 태스크들을 단독으로 구현하며 구조 개선을 진행하였고, 해당 기능에 대한 유지·보수 역할 역시 지속적으로 담당하여 수행해왔습니다. 
-
-또한 2개 프로젝트의 라이브 서비스를 운영하며 즉각적인 장애 대응, 성능 문제 해결을 경험하며 문제 분석 및 해결 능력을 갖추었습니다.
-
-이 과정에서 Next.js·React Native·Node.js 기반의 풀스택 개발 기술과 AWS 환경 서버 운영 경험을 쌓아왔으며, 스타트업 환경에서 기획·디자인 분야와의 긴밀히 소통하며 협업 능력을 키워왔습니다.`,
-    aboutDetail: [
-        {
-            section: '개요',
-            content: `저는 1년 9개월 동안 아이비알도스에서 풀스택 개발자로 근무하며 총 5개의 서비스 개발과 2개의 사내 사이드 프로젝트에 참여했습니다. 7개 프로젝트에서 프론트엔드 개발을 담당했고, 이 중 4개 프로젝트에서 백엔드까지 담당하여 풀스택 개발을 진행했습니다.
-
-각 프로젝트에서 할당된 기능 개발 태스크들을 단독으로 구현하고, 해당 기능에 대한 구조 개선 및 유지·보수 역할을 지속적으로 담당하여 수행해왔습니다. 
+각 프로젝트에서 할당된 기능 개발 태스크들을 단독으로 구현하고, 해당 기능에 대한 구조 개선 및 유지·보수 역할을 지속적으로 담당하여 수행해왔습니다.
 
 모든 프로젝트는 기획 단계부터 참여하여 서비스 요구사항 정의, 기술 스택 선택, UI·UX 흐름 검토, DB 설계, 프로젝트 초기 세팅 등 서비스 구축 전 과정에 기여하여 경험을 쌓았습니다.
 
-특히 2개의 프로젝트는 라이브 서비스를 직접 운영하며 즉각적인 장애 대응, 성능 문제 해결을 경험하며 문제 분석 및 해결 능력을 갖출 수 있었습니다. 
+특히 2개의 프로젝트는 라이브 서비스를 직접 운영하며 즉각적인 장애 대응, 성능 문제 해결을 경험하며 문제 분석 및 해결 능력을 갖출 수 있었습니다.
 
-이 과정에서 Next.js·React Native·Node.js 기반의 풀스택 개발 기술과 AWS 환경 서버 운영 경험을 쌓아왔으며, 스타트업 환경에서 기획·디자인 분야와의 긴밀히 소통하며 협업 능력을 키워 프로젝트를 성공적으로 기획부터 출시까지 완료한 경험을 가지고 있습니다.`
+이 과정에서 Next.js·React Native·Node.js 기반의 풀스택 개발 기술과 AWS 환경 서버 운영 경험을 쌓았습니다. 스타트업 환경에서 기획·디자인 분야와의 긴밀히 소통하며 협업 능력을 키워 기획부터 출시까지 프로젝트를 성공적으로 완료한 경험을 가지고 있습니다.`,
+    aboutDetail: [
+        {
+            section: '개요',
+            content: `저는 1년 9개월 동안 웹·앱 기획·개발·운영 스타트업 아이비알도스에서 풀스택 개발자로 근무하며 총 4개의 서비스 개발과 3개의 사내 사이드 프로젝트에 참여했습니다. 총 7개 프로젝트에서 프론트엔드 개발을 담당했고, 이 중 4개 프로젝트에서 백엔드까지 담당하여 풀스택 개발을 진행했습니다.
+
+각 프로젝트에서 할당된 기능 개발 태스크들을 단독으로 구현하고, 해당 기능에 대한 구조 개선 및 유지·보수 역할을 지속적으로 담당하여 수행해왔습니다.
+
+모든 프로젝트는 기획 단계부터 참여하여 서비스 요구사항 정의, 기술 스택 선택, UI·UX 흐름 검토, DB 설계, 프로젝트 초기 세팅 등 서비스 구축 전 과정에 기여하여 경험을 쌓았습니다.
+
+특히 2개의 프로젝트는 라이브 서비스를 직접 운영하며 즉각적인 장애 대응, 성능 문제 해결을 경험하며 문제 분석 및 해결 능력을 갖출 수 있었습니다.
+
+이 과정에서 Next.js·React Native·Node.js 기반의 풀스택 개발 기술과 AWS 환경 서버 운영 경험을 쌓았습니다. 스타트업 환경에서 기획·디자인 분야와의 긴밀히 소통하며 협업 능력을 키워 기획부터 출시까지 프로젝트를 성공적으로 완료한 경험을 가지고 있습니다.`
         },
         {
             section: '역량',
             content: [
                 {
                     title: '조직 적응력과 협업 태도',
-                    content: `저는 조직의 방향성과 리듬을 함께하는 사람입니다. 소속감을 중요한 가치로 여기며, 조직이 정한 방향성에 공감하고, 팀 분위기에 빠르게 적응해 왔습니다. 실제로 직전 회사의 신입 사원 평가에서 적응도, 적극성, 협조성, 이해도 등 전 항목에서 압도적으로 높은 점수를 받아 좋은 조건으로 정규직 전환에 성공한 경험이 있습니다. `
+                    content: `저는 조직의 방향성과 리듬을 함께하는 사람입니다. 소속감을 중요한 가치로 여기며, 조직이 정한 방향성을 이해하고, 팀 분위기에 빠르게 적응해 왔습니다. 실제로 직전 회사의 신입 사원 평가에서 적응도, 적극성, 협조성, 이해도 등 전 항목에서 압도적으로 높은 점수를 받아 좋은 조건으로 정규직 전환에 성공한 경험이 있습니다.`
                 },
                 {
                     title: '서비스 이해 기반 능동적 개발',
-                    content: `서비스를 전체 흐름으로 이해하고 능동적으로 개발에 임하는 태도 역시 제가 가진 강점입니다. 랜딩 페이지 개발시, 요구조건을 분석한 뒤 intersection observer와 dynamic import, placeholder component, 고품질 svg의 png 변환 등의 전략을 사용하여 스크롤 위치와 상관없이 빠르게 로딩될 수 있도록 개선했습니다. 또한 useMediaQuery hook, css media query를 콘텐츠 위치에 따라 전략적으로 사용하여 속도와 동시에 최상의 사용자 경험을 이끌어 내고자 하였습니다. 또한 타 서비스의 개발 방식을 분석해, 기획·디자인팀에 개선 가능성을 제안하기도 하였습니다. `
+                    content: `서비스를 전체 흐름으로 이해하고 능동적으로 개발에 임하는 태도 역시 제가 가진 강점입니다. 랜딩 페이지 개발 시, 그 특성과 요구 사항을 분석하여 SEO와 UX 최적화라는 두 가지 목표를 설정하였습니다.
+
+SEO 최적화를 위해 SSR 방식을 적용하여 검색엔진이 빠르게 HTML 기반 콘텐츠를 수집할 수 있도록 하였고, 섹션의 목차식 구성과 시멘틱 마크업을 적용하여 키워드 노출 효과를 극대화하였습니다.
+
+동시에 UX 관점에서는 초기 로드 성능 개선에 집중하였습니다. 각 요소의 SEO 기여도와 리소스 비용을 기준으로 렌더링 방식을 구분하여, 중요도가 높은 텍스트 중심 요소는 SSR로 처리해 FCP를 단축하고, 상대적으로 중요도가 낮고 리소스를 소모가 큰 에셋 중심 요소는 CSR과 지연 로드를 적용하여 초기 로딩 성능을 향상시켰습니다.
+
+그 결과 주요 키워드 검색 시 상위 노출에 성공하였으며, 내부 평가에서 초기 로딩 속도가 빠르다는 긍정적인 평가를 받았습니다. 뿐만 아니라 타 서비스의 개발 방식을 분석하여 기획·디자인팀에 개선 방향을 제안하는 등, 요구사항을 넘어 능동적으로 서비스 완성도를 높이고자 노력해왔습니다.`
                 },
                 {
                     title: '운영 중심의 문제 해결 능력',
-                    content: `저는 운영 중 발생하는 문제를 빠르게 파악하고 대응하는 문제 해결 능력을 키워 왔습니다. 사용자 피드백, Sentry 로그를 기반으로 문제를 정확히 재현하고, 제가 가진 서비스 이해도를 바탕으로 맥락을 파악하여 문제를 찾아낸 뒤, 신속하게 조치하고 자체 테스트를 통해 문제가 해결되었음을 확인하는 프로세스를 갖추었습니다. 해결 후에는 유사 기능을 범위별로 점검해 비슷한 유형의 문제의 재발을 방지하였고, 문제 원인과 대응 방식을 팀원들과 공유함으로써 대응력을 높였습니다. 팀 내 역할 분담을 명확히 파악하고 있어, 직접 해결하기 어려운 영역은 담당자와 즉시 협업하여 대응 시간을 단축하였고, 이러한 체계적 문제 해결 방식은 사용자로부터 빠른 대응이라는 긍정적 피드백으로 이어졌습니다. `
+                    content: `저는 운영 중 발생하는 문제를 빠르게 파악하고 대응하는 문제 해결 능력을 키워 왔습니다. 사용자 피드백, Sentry 로그를 기반으로 문제를 정확히 재현하고, 제가 가진 서비스 이해도를 바탕으로 맥락을 파악하여 문제를 찾아낸 뒤, 신속하게 조치하고 자체 테스트를 통해 문제가 해결되었음을 확인하는 프로세스를 갖추었습니다. 
+
+해결 후에는 유사 기능을 범위별로 점검해 비슷한 유형의 문제의 재발을 방지하였고, 문제 원인과 대응 방식을 팀원들과 공유함으로써 조직 차원의 대응력을 높였습니다. 팀 내 역할 분담을 명확히 파악하고 있어, 직접 해결하기 어려운 영역은 담당자와 즉시 협업하여 대응 시간을 단축하였고, 이러한 체계적 문제 해결 방식은 사용자로부터 빠른 대응이라는 긍정적 피드백으로 이어졌습니다.`
                 },
                 {
                     title: '책임감과 오너쉽',
-                    content: `책임감은 제가 가진 가장 큰 장점입니다. 소규모 개발팀에서 기능별로 프론트엔드 구조 설계, DB 설계, 퍼블리싱부터 개발, 유지보수까지의 전체 프로세스를 직접 담당했기에, 맡은 일에 대해 끝까지 책임지는 태도로 임했습니다. 
-특히 ‘포포넛’ 고객용 플랫폼은 기획 단계부터 개발, 출시, 라이브 운영까지 전체 과정의 90% 이상을 담당한 프로젝트였습니다. 핵심 기능 구현뿐 아니라 서비스 운영 중 발생한 장애 대응, 성능 개선, 추가 기능 개발까지 모두 직접 처리하며 플랫폼을 일관된 품질로 유지했습니다. 자연스럽게 서비스에 대한 오너쉽을 가지고 개발 및 운영에 임할 수 있었고, 그 결과 팀원들도 해당 플랫폼에 대한 업무는 저에게 전담함으로써 제 책임감을 인정 받기도 했습니다. 이 경험을 통해 “내가 만든 서비스를 내가 끝까지 책임진다”는 태도를 자연스럽게 갖추게 되었습니다. `
+                    content: `책임감은 제가 가진 가장 큰 장점입니다. 소규모 개발팀에서 기능별로 프론트엔드 구조 설계, DB 설계, 퍼블리싱부터 개발, 유지보수까지의 전체 프로세스를 직접 담당했기에, 맡은 일에 대해 끝까지 책임지는 태도로 임했습니다.
+
+특히 ‘포포넛’ 고객용 플랫폼은 기획 단계부터 개발, 출시, 라이브 운영까지 전체 과정의 90% 이상을 담당한 프로젝트였습니다. 핵심 기능 구현뿐 아니라 서비스 운영 중 발생한 장애 대응, 성능 개선, 추가 기능 개발까지 모두 직접 처리하며 플랫폼을 일관된 품질로 유지했습니다. 
+
+자연스럽게 서비스에 대한 오너쉽을 가지고 개발 및 운영에 임할 수 있었고, 그 결과 팀원들도 해당 플랫폼에 대한 업무는 저에게 전담함으로써 제 책임감을 인정 받기도 했습니다. 이 경험을 통해 “내가 만든 서비스를 내가 끝까지 책임진다”는 태도를 자연스럽게 갖추게 되었습니다.`
                 },
                 {
                     title: '환경 개선을 위한 노력',
-                    content: `이러한 환경 속에서 개발 환경 개선과 업무 효율화에도 관심을 기울였습니다. 실제로 Cursor IDE나 Claude Code 등을 적극 활용하여 업무 시간을 단축하였으며, AI 에이전트 효율성을 높이기 위해 Openapi를 통한 DB 스키마 자동화 연동 시 타입을 자동으로 생성하는 스크립트를 생성하였습니다. 이로써 타입 지정 과정을 단축하고 AI 에이전트에게 더 다양한 범위에서 완성도 높은 코드를 작성할 수 있도록 하였습니다. 프로젝트 일정 내에서 환경 개선을 시도하고, 이외에는 개인 프로젝트에 우선 적용한 뒤 업무에 적용함으로써, 업무의 품질과 효율성, 개인적인 성장을 모두 놓치지 않도록 노력했습니다.`
+                    content: `이러한 환경 속에서 개발 환경 개선과 업무 효율화에도 관심을 기울였습니다. 실제로 Cursor IDE나 Claude Code 등을 적극 활용하여 업무 시간을 단축하였으며, AI 에이전트 효율성을 높이기 위해 Openapi를 통한 DB 스키마 자동화 연동 시 타입을 자동으로 생성하는 스크립트를 생성하였습니다. 이로써 타입 지정 과정을 단축하고 AI 에이전트에게 더 다양한 범위에서 완성도 높은 코드를 작성할 수 있도록 하였습니다. 
+
+프로젝트 일정 내에서 환경 개선을 시도하고, 이외에는 개인 프로젝트에 우선 적용한 뒤 업무에 적용함으로써, 업무의 품질과 효율성, 개인적인 성장을 모두 놓치지 않도록 노력했습니다.`
                 }
             ]
         },
         {
             section: '비전',
-            content: `운영 중이던 서비스에 관여했던 바가 컸던 만큼 애정도 컸던 만큼, 원래는 이직을 고려하고 있지 않았습니다. 
+            content: `참여했던 프로젝트에 대한 관여도와 애정이 컸었기 때문에, 원래는 이직을 고려하고 있지 않았습니다.
 그러나 외부적인 요소로 인해 회사가 경영 악화에 직면하며, 결국 서비스 종료와 함께 불가피한 이직을 선택할 수 밖에 없는 상황이 되었습니다.
-안타까운 상황이었지만, 저는 이것을 제 스스로 한 단계 성장시킬 수 있는 기회로 받아들였습니다. 
+안타까운 상황이었지만, 저는 이것을 제 스스로 한 단계 성장시킬 수 있는 기회로 받아들였습니다.
 
-이전 회사는 소규모 인원과 조직으로 구성되어, 그만큼 개인의 책임감·개발 역량·커뮤니케이션 능력이 중시되는 환경이었습니다. 이러한 환경과 빠른 프로젝트 일정 속에서 저는 기획·디자인·CS 팀과 긴밀하게 협업하며 빠르게 성장할 수 있었습니다. 
+이전 회사는 소규모 인원과 조직으로 구성되어, 그만큼 개인의 책임감·개발 역량·커뮤니케이션 능력이 중시되는 환경이었습니다. 이러한 환경과 빠른 프로젝트 일정 속에서 저는 기획·디자인·CS 팀과 긴밀하게 협업하며 빠르게 성장할 수 있었습니다. 그 과정에서 개발 뿐만 아니라 서비스 운영, 문제 대응 , 성능 개선 등 전체 흐름을 주도적으로 수행했던 경험과 역량을, 더 큰 조직과 시장 속에서 더 많은 사용자를 대상으로 더욱 가치 있게 활용해 보고자 합니다.
 
-그 과정에서 개발 뿐만 아니라 서비스 운영, 문제 대응 , 성능 개선 등 전체 흐름을 주도적으로 수행했던 경험과 역량을, 더 큰 조직과 시장 속에서 더 많은 사용자를 대상으로 더욱 가치 있게 활용해 보고자 합니다.
-
-서비스 개발·배포·운영·문제 대응까지의 전체 사이클을 담당했던 경험과 다양한 직무와 협업하여 프로젝트를 출시해낸 경험을 바탕으로, 새로운 환경에서도 빠르게 적응하여 팀의 성장에 기여할 자신이 있습니다. 그동안 쌓고 증명해 온 책임감과 역량을 통해 더 체계적인 문화 속에서 유의미한 가치를 만드는 데 기여하고 싶습니다.`
+전체 개발 사이클을 담당하며 다양한 직무와 협업하여 프로젝트를 출시해낸 경험을 바탕으로, 새로운 환경에서도 빠르게 적응하여 팀의 성장에 기여할 자신이 있습니다. 그동안 쌓고 증명해 온 책임감과 역량을 통해 더 체계적인 문화 속에서 실력 있는 팀원들과 함께 유의미한 가치를 만드는 데 기여하고 싶습니다.`
         },
     ],
     history: [
@@ -644,7 +655,208 @@ package.json으로 의존성 관리, npm scripts로 빌드/배포/개발 스크�
             link: 'https://sjlog.vercel.app/',
             title: 'blog'
         },
-    ]
+    ],
+    trip: [
+        {
+            region1: 'INDIA',
+            region2: 'MUMBAI / NEW DELHI / AGRA / LONAVALA / PUNE',
+            image1Height: 190,
+            image1Style: 'top-[50px] brightness-90 right-[0px]',
+            image2Width: 170,
+            image2Style: 'bottom-[-5px] right-[-5px] opacity-80',
+        },
+        {
+            region1: 'VIETNAM',
+            region2: 'HANOI / SAPA / HO CHI MINH',
+            image1Width: 280,
+            image1Style: 'top-[70px] left-[10px] rotate-[-7deg] brightness-90',
+            image2Width: 170,
+            image2Style: 'bottom-[-5px] right-[-10px] opacity-0',
+        },
+        {
+            region1: 'LAOS',
+            region2: 'VIENTIANE / LUANG PRABANG / VANG VIENG',
+            image1Height: 260,
+            image1Style: 'top-[45px] right-[-18px] rotate-[12deg]',
+            image2Width: 240,
+            image2Style: 'bottom-[-10px] right-[-20px] rotate-[-5deg] opacity-80',
+        },
+        {
+            region1: 'CHINA',
+            region2: 'QINGDAO / SHANGHAI',
+            image1Height: 200,
+            image1Style: 'top-[54px] right-[-15px] rotate-[10deg] brightness-105',
+            image2Width: 190,
+            image2Style: 'bottom-[-50px] right-[-15px] rotate-[-5deg] opacity-80 brightness-90',
+        },
+        {
+            region1: 'THAILAND',
+            region2: 'BANGKOK',
+            image1Height: 85,
+            image1Style: 'top-[65px] right-[30px] rotate-[0deg] brightness-120 object-cover',
+            image2Width: 130,
+            image2Style: 'bottom-[-90px] right-[-25px] rotate-[0deg] opacity-80',
+        },
+        {
+            region1: 'JAPAN',
+            region2: 'TOKYO / FUKUOKA / SHIMONOSEKI',
+            image1Height: 150,
+            image1Style: 'top-[70px] right-[-10px] rotate-[-5deg] brightness-100',
+            image2Width: 185,
+            image2Style: 'bottom-[-30px] right-[-55px] rotate-[-4deg] opacity-80 brightness-90',
+        },
+        {
+            region1: 'UK',
+            region2: 'LONDON / DOVER',
+            image1Height: 290,
+            image1Style: 'top-[18px] right-[-25px] rotate-[0deg] brightness-120',
+            image2Width: 300,
+            image2Style: 'bottom-[-20px] right-[-40px] rotate-[6deg] opacity-80 scale-x-[-1] brightness-90',
+        },
+        {
+            region1: 'GERMANY',
+            region2: 'BERLIN / FRANKFURT / HEIDELBERG / KÖLN',
+            image1Height: 330,
+            image1Style: 'top-[50px] right-[10px] rotate-[5deg] brightness-120',
+            image2Width: 190,
+            image2Style: 'bottom-[-32px] right-[-40px] rotate-[-7deg] opacity-80 brightness-90 scale-x-[-1]',
+        },
+        {
+            region1: 'FRANCE',
+            region2: 'PARIS',
+            image1Height: 260,
+            image1Style: 'top-[50px] right-[0px] rotate-[5deg] brightness-110',
+            image2Width: 300,
+            image2Style: 'bottom-[-87px] right-[-70px] rotate-[10deg] opacity-80 scale-x-[-1] brightness-100',
+        },
+        {
+            region1: 'BELGIUM',
+            region2: 'BRUSSELS',
+            image1Height: 280,
+            image1Style: 'top-[15px] right-[-15px] rotate-[5deg] brightness-100',
+            image2Width: 220,
+            image2Style: 'bottom-[-80px] right-[-50px] rotate-[0deg] opacity-80',
+        },
+        {
+            region1: 'NETHERLAND',
+            region2: 'AMSTERDAM / ALKMAAR',
+            image1Height: 100,
+            image1Style: 'top-[52px] right-[-10px] rotate-[5deg] brightness-100',
+            image2Width: 200,
+            image2Style: 'bottom-[-50px] right-[-30px] rotate-[0deg] opacity-80',
+        },
+        {
+            region1: 'AUSTRIA',
+            region2: 'VIENNA',
+            image1Height: 200,
+            image1Style: 'top-[35px] right-[-20px] rotate-[5deg] brightness-100',
+            image2Width: 210,
+            image2Style: 'bottom-[-60px] right-[-45px] rotate-[10deg] opacity-70',
+        },
+        {
+            region1: 'SWITZERLAND',
+            region2: 'ZURICH / GENEVA / LAUSANNE',
+            image1Height: 300,
+            image1Style: 'top-[55px] right-[-10px] rotate-[0deg] brightness-110',
+            image2Width: 190,
+            image2Style: 'bottom-[-45px] right-[-60px] rotate-[20deg] opacity-80 brightness-100',
+        },
+        {
+            region1: 'CZECH REPUBLIC',
+            region2: 'PRAGUE',
+            image1Height: 280,
+            image1Style: 'top-[45px] right-[20px] rotate-[5deg] brightness-100',
+            image2Width: 180,
+            image2Style: 'bottom-[-40px] right-[-20px] rotate-[10deg] opacity-80',
+        },
+        {
+            region1: 'ITALY',
+            region2: 'VENEZIA / ROME',
+            image1Height: 260,
+            image1Style: 'top-[45px] right-[-10px] rotate-[-5deg] brightness-120',
+            image2Width: 250,
+            image2Style: 'bottom-[-30px] right-[-60px] rotate-[-10deg] opacity-70',
+        },
+        {
+            region1: '경상북도',
+            region2: '포항 / 안동 / 경주 / 영덕 / 울진 / 대구',
+            image1Height: 200,
+            image1Style: 'top-[45px] right-[-0px] rotate-[-5deg] brightness-100',
+            image2Width: 200,
+            image2Style: 'bottom-[-85px] right-[-10px] rotate-[10deg] opacity-90',
+        },
+        {
+            region1: '경상남도',
+            region2: '부산 / 통영 / 사천 / 거제 / 하동 / 남해 / 산청',
+            image1Height: 350,
+            image1Style: 'top-[45px] right-[-15px] rotate-[-5deg] brightness-110',
+            image2Width: 220,
+            image2Style: 'bottom-[-30px] right-[-55px] rotate-[0deg] opacity-70 scale-x-[-1]',
+        },
+        {
+            region1: '전라남도',
+            region2: '광주 / 목포 / 여수 / 순천 / 나주 / 구례 / 해남 / 강진 / 화순 / 무안 / 완도',
+            image1Height: 380,
+            image1Style: 'top-[45px] right-[-40px] rotate-[-5deg] brightness-1-0',
+            image2Width: 220,
+            image2Style: 'bottom-[-75px] right-[-65px] rotate-[0deg] opacity-60',
+        },
+        {
+            region1: '전라북도',
+            region2: '전주 / 정읍 / 군산 / 남원 / 익산 / 부안 / 임실',
+            image1Height: 370,
+            image1Style: 'top-[50px] right-[-30px] rotate-[-5deg] brightness-100',
+            image2Width: 240,
+            image2Style: 'bottom-[-120px] right-[-70px] opacity-100 brightness-120',
+        },
+        {
+            region1: '충청북도',
+            region2: '청주 / 충주 / 괴산 / 보은 / 제천',
+            image1Height: 320,
+            image1Style: 'top-[25px] right-[0px] rotate-[-5deg] brightness-120',
+            image2Width: 200,
+            image2Style: 'bottom-[-100px] right-[-35px] rotate-[10deg] opacity-70',
+        },
+        {
+            region1: '충청남도',
+            region2: '계룡 / 공주 / 논산 / 당진 / 보령 / 서산 / 천안 / 부여 / 태안',
+            image1Height: 110,
+            image1Style: 'top-[45px] right-[-0px] rotate-[-0deg] brightness-105 scale-x-[-1]',
+            image2Width: 180,
+            image2Style: 'bottom-[-10px] right-[-20px] rotate-[0deg] brightness-70',
+        },
+        {
+            region1: '경기도',
+            region2: '수원 / 화성 / 동두천 / 구리 / 김포 / 포천 / 여주',
+            image1Height: 210,
+            image1Style: 'top-[-8px] right-[-5px] rotate-[-13deg] brightness-90',
+            image2Width: 150,
+            image2Style: 'bottom-[-20px] right-[-10px] rotate-[5deg] brightness-80',
+        },
+        {
+            region1: '강원도',
+            region2: '강릉 / 동해 / 삼척 / 속초 / 원주 / 춘천 / 고성 / 양구 / 양양 / 인제 / 평창 / 홍천',
+            image1Height: 300,
+            image1Style: 'top-[40px] right-[-20px] rotate-[-10deg] brightness-100',
+            image2Width: 200,
+            image2Style: 'bottom-[-10px] right-[-20px] rotate-[0deg] brightness-80 opacity-90',
+        },
+        {
+            region1: '제주도',
+            region2: '',
+            image1Height: 320,
+            image1Style: 'top-[40px] right-[-20px] rotate-[-10deg] brightness-90 scale-x-[-1]',
+            image2Width: 260,
+            image2Style: 'bottom-[-30px] right-[0px] rotate-[2deg] brightness-90 scale-[1.05]',
+        },
+    ],
+    tripDetail: {
+        title: `배낭 하나 매고 훌쩍 떠나는 여행을 좋아합니다.`,
+        content: 
+`자전거 여행, 걷기 여행, 캠핑, 배낭 여행, 유적 답사, 어떠한 형태이든 출발하는 것을 즐깁니다.
+최근에는 국내 여행을 위주로 보석과 같은 곳들을 찾아다니고 있습니다.
+국내를 한 바퀴 걸어서 일주하는 것이 목표입니다.`
+    }
 
 }
 

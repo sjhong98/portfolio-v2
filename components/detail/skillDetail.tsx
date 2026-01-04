@@ -1,11 +1,13 @@
 'use client'
 
 import mainContent from "@/contents/main";
+import { useMode } from "@/hooks/useMode";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Skill from "../overview/skill";
 
 export default function SkillDetail() {
+    const { mode, switchMode } = useMode();
     const [selectedSkill, setSelectedSkill] = useState<string | undefined>(undefined);
     const [descriptionVisibleIndex, setDescriptionVisibleIndex] = useState<string | undefined>(undefined);
 
@@ -35,8 +37,21 @@ export default function SkillDetail() {
     }, [selectedSkill])
 
     return (
-        <div className='flex flex-col gap-12 relative'>
-            <h1 className='text-4xl font-black text-sub-light'>Skills</h1>
+        <div className='flex flex-col gap-12 relative pt-10'>
+            <button
+                style={{
+                    opacity: mode !== undefined ? 1 : 0,
+                    transition: 'all 0.3s ease-in-out',
+                    cursor: mode !== undefined ? 'pointer' : 'default',
+                    pointerEvents: mode !== undefined ? 'auto' : 'none',
+                }}
+                className='absolute left-[0%] top-[0%]'
+                onClick={() => switchMode(undefined)}
+            >
+                <ArrowBackIcon />
+            </button>
+
+            <h1 className='text-4xl font-black text-sub-light ml-'>Skills</h1>
 
             <div className='absolute top-0 right-0 flex flex-col gap-1 items-end'>
                 <div className='flex flex-row gap-2 items-center'>

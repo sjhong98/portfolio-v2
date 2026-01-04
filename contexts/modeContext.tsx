@@ -36,9 +36,13 @@ export const ModeProvider = ({ children }: { children: ReactNode }) => {
     }
 
     useEffect(() => {
-        if (mode === 'about' || mode === 'project' || mode === 'skill') setOverviewTransparent(true);
+        if (mode !== undefined) setOverviewTransparent(true);
         else setOverviewTransparent(false);
     }, [mode])
+
+    useEffect(() => {
+        console.log('overviewTransparent', overviewTransparent)
+    }, [overviewTransparent])
 
     return (
         <ModeContext.Provider value={{ mode, switchMode, overviewTransparent, setOverviewTransparent, lastMode }}>

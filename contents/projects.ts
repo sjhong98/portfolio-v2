@@ -130,7 +130,7 @@ const projects = {
             '- 가독성 향상: 복잡한 로직이나 추가된 기능에 대해 주석 처리하여 다른 개발자들의 이해도 향상'
         ],
         assets: [
-            `/assets/projects/기업 브랜딩 사이트/1.mov`,
+            `/assets/projects/기업 브랜딩 사이트/1.gif`,
             `/assets/projects/기업 브랜딩 사이트/1.png`,
         ],
         mainAsset: null
