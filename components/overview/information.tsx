@@ -26,7 +26,9 @@ export default function Information() {
                             Frontend/Backend Developer
                         </p>
                     </div>
-                    <p className='text-md font-light text-sub'>열정과 섬세함으로 마음을 얻는 개발자가 되겠습니다.</p>
+                    <p className='text-md font-light text-sub'>
+                        책임감으로 마음을 얻는 개발자가 되겠습니다.
+                    </p>
 
                     <IndexDisplay />
 
