@@ -35,7 +35,7 @@ export default function Skill() {
                     className='flex w-full rounded-xl justify-center items-center py-2 border-[1px] border-sub-darker cursor-pointer group hover:border-sub transition-all duration-150'
                 >
                     <p className='text-sm text-sub font-extralight group-hover:text-sub-light transition-all duration-150'>
-                        스킬 자세히
+                        전체 내용
                     </p>
                 </button>
             </div>

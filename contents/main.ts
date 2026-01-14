@@ -54,7 +54,7 @@ SEO 최적화를 위해 SSR 방식을 적용하여 검색엔진이 빠르게 HTM
 이외에도 요구사항을 보다 완성도 있게 구현하고 개발 생산성을 높이기 위해 GSAP, Claude Code, Supabase 등 다양한 기술과 도구를 지속적으로 탐색하고 실제 프로젝트에 적용해왔습니다.
 
 이러한 경험을 통해 저는 새로운 기술을 이해하는 수준에 그치지 않고, 실무에 즉시 적용할 수 있는 수준으로 흡수하고 활용할 수 있는 학습 역량을 갖추게 되었습니다.`
-                }
+                },
                 {
                     title: '환경 개선을 위한 노력',
                     content: `이러한 환경 속에서 저는 불편한 지점을 스스로 발견하고, 개발 환경을 개선하며 업무 효율을 높이는 데에도 꾸준히 관심을 기울여 왔습니다.
@@ -557,6 +557,13 @@ S3 Transfer Acceleration으로 전송 속도 향상. 버킷 정책 및 CORS 설�
 Session Replay로 사용자 행동 추적. ClickUp 웹훅 연동으로 에러 발생 시 자동 태스크 생성, 프로덕션 환경 모니터링 및 버그 추적 경험.`,
                     lines: 7,
                     level: 2
+                },
+                {
+                    id: 47,
+                    title: 'Cypress',
+                    description: `Cypress 기반 E2E 테스트 구축 경험 보유`,
+                    lines: 3,
+                    level: 1
                 }
             ]
         },
@@ -642,9 +649,9 @@ package.json으로 의존성 관리, npm scripts로 빌드/배포/개발 스크�
 또한 다양한 요구사항에 맞춰 |Radix, Shadcn, GSAP| 등 새로운 UI 도구를 적극적으로 도입해 인터랙션과 사용자 경험을 개선했습니다.
 
 |Elysia/Bun, Fastify/Node.js| 환경에서 API를 설계하고, |AWS(EC2, Lambda, Elastic Beanstalk, RDS, S3)|를 활용해 데이터베이스·인증·배포를 포함한 풀스택 개발 경험을 보유하고 있습니다.
-이 과정에서 |Drizzle · Prisma · Knex.js| ORM/Query Builder를 활용해 데이터 모델링과 쿼리 구조를 설계했으며, |Recoil · React Context API| 등을 통한 상태 관리와 |Swagger · OpenAPI| 기반의 API 문서화를 통해 프론트엔드–백엔드 간 협업 효율을 높였습니다.
+이 과정에서 |Drizzle · Prisma · Knex.js| ORM/Query Builder를 활용해 데이터 모델링과 쿼리 구조를 설계했으며, |Recoil · React Context API| 등을 통한 상태 관리와 |Swagger · Openapi-fetch| 기반의 API 문서화를 통해 프론트엔드–백엔드 간 협업 효율을 높였습니다.
 
-또한 |GitHub| 기반의 버전 관리와 |ClickUp · Figma|를 활용한 작업 관리 및 디자인 협업 등 협업 중심의 개발 프로세스에 익숙합니다.
+또한 |GitHub| 기반의 버전 관리와 |ClickUp · Figma|를 활용한 작업 관리 및 디자인 협업 등 협업 중심의 개발 프로세스에 익숙하며, |Cursor AI · Claude Code| 등 AI 툴을 활용한 생산성 향상에 관심을 가지고 있습니다.
 
 서비스 품질과 개발 경험을 개선하기 위해 새로운 기술과 도구를 |지속적으로 도입|해왔으며, 
 문제 해결에 필요한 스킬이라면 |빠르게 학습하고 실무에 적용할 수 있는 학습 역량|을 갖추고 있습니다.
