@@ -611,6 +611,13 @@ package.json으로 의존성 관리, npm scripts로 빌드/배포/개발 스크�
                     level: 3
                 },
                 {
+                    id: 48,
+                    title: 'Claude Code',
+                    description: `Claude Code CLI 기반 AI 보조 개발 활용 경험 보유.`,
+                    lines: 6,
+                    level: 2
+                },
+                {
                     id: 43,
                     title: 'WebStorm',
                     description: `WebStorm 기반 개발 활용 경험 보유.`,
