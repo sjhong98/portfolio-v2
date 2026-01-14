@@ -16,14 +16,14 @@ export default function About() {
       <p className='sm:text-[16px] text-[14px] text-sub-light whitespace-pre-wrap break-keep'>
         {mainContent.about}
       </p>
-      <button
+      {/* <button
         onClick={() => switchMode('about')}
         className='flex w-full rounded-xl justify-center items-center py-2 border-[1px] border-sub-darker cursor-pointer group hover:border-sub transition-all duration-150'
       >
         <p className='text-[14px] text-sub font-extralight group-hover:text-sub-light transition-all duration-150'>
           전체 자기소개서
         </p>
-      </button>
+      </button> */}
     </OverviewContainer>
   )
 }
