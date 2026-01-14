@@ -78,7 +78,8 @@ const projects = {
             '/assets/projects/cambolink/8.png',
             '/assets/projects/cambolink/9.png',
         ],
-        mainAsset: 0
+        mainAsset: 0,
+        url: 'https://www.cambolinks.com'
     },
     '기업 브랜딩 사이트': {
         title: '기업 브랜딩 사이트',
@@ -133,7 +134,8 @@ const projects = {
             `/assets/projects/기업 브랜딩 사이트/1.gif`,
             `/assets/projects/기업 브랜딩 사이트/1.png`,
         ],
-        mainAsset: null
+        mainAsset: null,
+        url: 'https://portfoilo-sample-ce3e.vercel.app/branding-page'
     },
     supplmarket: {
         title: 'Supplmarket',
@@ -218,7 +220,8 @@ const projects = {
             `/assets/projects/supplmarket/6.png`,
             `/assets/projects/supplmarket/7.png`,
         ],
-        mainAsset: 0
+        mainAsset: 0,
+        url: 'https://supplmarket.com'
     },
     '포포넛 비즈니스': {
         title: '포포넛 비즈니스',
@@ -349,7 +352,8 @@ const projects = {
             `/assets/projects/포포넛 비즈니스/9.png`,
             `/assets/projects/포포넛 비즈니스/10.png`,
         ],
-        mainAsset: 1
+        mainAsset: 1,
+        url: 'https://biz.pawpawnut.com'
     },
     '포포넛 고객용': {
         title: '포포넛 고객용',
@@ -431,7 +435,8 @@ const projects = {
             `/assets/projects/포포넛 고객용/5.png`,
             `/assets/projects/포포넛 고객용/6.png`,
         ],
-        mainAsset: 0
+        mainAsset: 0,
+        url: 'https://www.pawpawnut.com/'
     },
     '포포넛 앱': {
         title: '포포넛 앱',

@@ -58,7 +58,8 @@ const sideProjects = {
             `/assets/projects/자사 브랜딩 사이트/4.png`,
             `/assets/projects/자사 브랜딩 사이트/5.png`,
         ],
-        mainAsset: 1
+        mainAsset: 1,
+        url: 'https://www.ibrdos.com/'
     },
     라이프커밋: {
         title: '라이프커밋',
@@ -134,7 +135,8 @@ const sideProjects = {
             `/assets/projects/라이프커밋/6.png`,
             `/assets/projects/라이프커밋/7.png`,
         ],
-        mainAsset: 0
+        mainAsset: 0,
+        url: 'https://apps.apple.com/kr/app/%EB%9D%BC%EC%9D%B4%ED%94%84%EC%BB%A4%EB%B0%8B/id6504664677'
     },
     '주유기록 인앱토스': {
         title: '주유기록 인앱토스',
@@ -280,7 +282,8 @@ const sideProjects = {
         assets: [
             `/assets/projects/sjlog/1.png`,
         ],
-        mainAsset: 0
+        mainAsset: 0,
+        url: 'https://sjlog.vercel.app/dev/sjhong98@icloud.com'
     }
 }
 
