@@ -26,7 +26,6 @@ export default function Project() {
     }
 
     const handleMouseLeave = () => {
-        console.log('handleMouseLeave')
         setIsHovered(false);
         setHoveredIndex(undefined);
     }

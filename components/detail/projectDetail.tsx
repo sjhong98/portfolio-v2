@@ -3,7 +3,7 @@
 import mainContent from "@/contents/main";
 import { useProject } from "@/hooks/useProject";
 import BoyIcon from '@mui/icons-material/Boy';
-import { Dialog, DialogContent, styled } from "@mui/material";
+import { Dialog, DialogContent, Link, styled } from "@mui/material";
 import { PieChart } from '@mui/x-charts/PieChart';
 import Image from "next/image";
 import { useMemo, useState } from "react";
@@ -14,6 +14,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import { useMode } from "@/hooks/useMode";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import InsertLinkIcon from '@mui/icons-material/InsertLink';
 
 // 스킬을 카테고리별로 그룹화하는 함수
 function groupSkillsByCategory(skills: string[]) {
@@ -120,6 +121,15 @@ export default function ProjectDetail() {
                                 </div>
                             ))}
                         </div>
+
+                        { selectedProject.url && (
+                            <div className='flex flex-row gap-1 items-center bg-sub-darker rounded-sm px-3 py-[2px] w-fit cursor-pointer hover:bg-sub-darkest transition-all duration-100'>
+                                <p>Link</p>
+                                <Link href={selectedProject.url} target="_blank">
+                                    <InsertLinkIcon sx={{ fontSize: 25, color: 'var(--color-sub-light)' }} />
+                                </Link>
+                            </div>
+                        )}
                     </div>
 
                     {/* Features */}
