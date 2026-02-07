@@ -136,7 +136,8 @@ const sideProjects = {
             `/assets/projects/라이프커밋/7.png`,
         ],
         mainAsset: 0,
-        url: 'https://apps.apple.com/kr/app/%EB%9D%BC%EC%9D%B4%ED%94%84%EC%BB%A4%EB%B0%8B/id6504664677'
+        url: 'https://apps.apple.com/kr/app/%EB%9D%BC%EC%9D%B4%ED%94%84%EC%BB%A4%EB%B0%8B/id6504664677',
+        pin: true,
     },
     '주유기록 인앱토스': {
         title: '주유기록 인앱토스',

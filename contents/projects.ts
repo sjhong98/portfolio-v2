@@ -4,10 +4,10 @@ const projects = {
         description: '셀러별 공동구매 페이지를 제공하는 셀러 전용 공동구매 플랫폼',
         features: [
             '셀러별 개인 공동구매 페이지 제공',
-            '상품 등록 및 홍보 링크 생성 기능',
-            '구매자의 공동구매 신청 기능',
-            '구매자 신청 리스트 다운로드 기능',
-            '셀러 전용 유료 플랜 결제 및 상품 슬롯 확장 기능'
+            '상품 등록 및 홍보 링크 생성',
+            '공동구매',
+            '구매자 신청 리스트 다운로드',
+            '셀러전용 유료플랜 결제 및 상품슬롯 확장'
         ],
         skills: [
             'Next.js',
@@ -29,14 +29,12 @@ const projects = {
             '',
             '프론트엔드/백엔드 아키텍처 설계 참여',
             '  - 멀티 테넌트 아키텍처: Next.js 동적 라우팅 기반 사용자별 페이지 시스템 설계',
-            '  - 서버리스 백엔드: AWS Lambda + Fastify 기반 확장 가능한 API 아키텍처 구축',
+            '  - 서버리스 백엔드: AWS Lambda + Fastify 기반 API 아키텍처 구축',
             '프론트엔드/백엔드 5개 주요 기능 · 로직 개발 (35%)',
             '  - 셀러 페이지 관리 기능 (페이지 할당, 동적 라우팅, SEO 최적화, 커스터마이징)',
-            '  - 제품 관리 기능 (4단계 업로드 프로세스, 임시 저장, 드래그 앤 드롭 재정렬)',
-            '  - 공동구매 신청 기능',
-            '  - 프로필 및 페이지 커스터마이즈 기능 (이미지 업로드, 배경 설정)',
-            '  - 티켓 기반 비즈니스 로직 (보유 티켓에 따른 권한 제한 로직)',
-            '  - 공용 컴포넌트 개발 (Recoil 기반 상태관리, 모달 · 토스트 시스템)',
+            '  - 제품 등록 및 관리 기능',
+            '  - 공동구매 구매',
+            '  - 프로필 및 셀러 페이지 커스터마이즈 기능',
             '라이브 서비스 운영 전담',
         ],
         totalDeveloper: 3,
@@ -46,26 +44,11 @@ const projects = {
         detail: [
             '### 서버리스 아키텍처 설계 및 구현',
             'Next.js / Fastify로 구성된 풀스택 프로젝트를 AWS Lambda 서버리스 환경으로 구성. ',
-            '서버 관리 부담 없이 운영할 수 있도록 함.',
             '### 동적 SEO 최적화 시스템 구축',
             '각 셀러의 pageLink별로 검색 엔진에 개별 노출되어야 하는 요구사항 해결.',
             '동적 메타데이터 생성: Next.js의 generateMetadata를 활용하여 URL 기반으로 사용자별 메타데이터 동적 생성 스크립트',
-            'code',
             '동적 사이트맵 생성: API를 통해 DB에서 모든 사용자와 제품 리스트를 패치하여 자동으로 사이트맵 생성',
-            'code',
             '결과: 수백 개의 셀러 페이지와 제품 페이지가 검색 엔진에 자동 인덱싱되어 개별 노출',
-            '### 크메르어 다국어 지원 및 UI 이슈 해결',
-            '크메르어를 JSON 타입 데이터로 매핑하여 번역 작업과 개발 작업을 분리하여 효율성 확보.',
-            '결과: 크메르어 다국어 지원 및 UI 이슈 해결',
-            'code',
-            '문제: 크메르어는 한글/영어 대비 문자 폭이 넓어 동일한 텍스트 길이에서 UI 깨짐 발생',
-            '해결:',
-            '- CSS에서 min-width/max-width 지정하여 유연한 레이아웃 대응',
-            '- text-overflow: ellipsis로 긴 텍스트 처리',
-            '- 반응형 미디어 쿼리로 다양한 화면 크기 대응',
-            '- 불가피한 경우 디자인 수정 요청하여 UX 개선',
-            'code',
-            '결과: 크메르어 환경에서도 안정적인 UI 제공 및 사용자 경험 개선'
         ],
         assets: [
             '/assets/projects/cambolink/1.png',
@@ -79,7 +62,8 @@ const projects = {
             '/assets/projects/cambolink/9.png',
         ],
         mainAsset: 0,
-        url: 'https://www.cambolinks.com'
+        url: 'https://www.cambolinks.com',
+        pin: false,
     },
     '기업 브랜딩 사이트': {
         title: '기업 브랜딩 사이트',
@@ -116,26 +100,26 @@ const projects = {
         backend: false,
         detail: [
             '### 복잡한 UI와 많은 양의 에셋으로 인한 성능 이슈를 해결하기 위해 최적화 처리',
-            '- 이미지 최적화: Next Image 활용하여 lazy load, 크기 지정, placeholder 적용',
-            '- AWS S3 가속화 설정으로 이미지 전송 속도 향상',
-            '- 지연 로딩: Intersection Observer API 기반 커스텀 컴포넌트(IntersectionAppearDiv) 구현하여 뷰포트 진입 시에만 렌더링하도록 함으로써 초기 렌더링 비용 감소',
-            '- 반응형 최적화: PC/모바일 환경별 최적화된 이미지 및 레이아웃 제공',
+            ' 이미지 최적화: Next Image 활용하여 lazy load, 크기 지정, placeholder 적용',
+            ' AWS S3 가속화 설정으로 이미지 전송 속도 향상',
+            ' 지연 로딩: Intersection Observer API 기반 커스텀 컴포넌트(IntersectionAppearDiv) 구현하여 뷰포트 진입 시에만 렌더링하도록 함으로써 초기 렌더링 비용 감소',
+            ' 반응형 최적화: PC/모바일 환경별 최적화된 이미지 및 레이아웃 제공',
             '### 복잡한 UI 에니메이션 구현',
-            '- 요구사항에 맞춰 다양한 애니메이션 기법을 선택 적용.',
-            '- 애니메이션 라이브러리 선택적 활용: 복잡한 스크롤 기반 애니메이션은 GSAP(ScrollTrigger)로 구현, 간단한 fade-in/scroll 애니메이션은 AOS로 빠르게 구현하여 개발 효율성 확보',
-            '- 라이브러리로 구현이 어려운 경우에는 CSS 애니메이션과 순수 JavaScript로 구현',
-            '- 페이지 전환 애니메이션: useDelayRouter 커스텀 훅 구현으로 Next.js Router의 사용 방법을 유지하여 개발자 경험을 향상하고, 페이지 전환 시 로딩 애니메이션을 통일',
+            ' 요구사항에 맞춰 다양한 애니메이션 기법을 선택 적용.',
+            ' 애니메이션 라이브러리 선택적 활용: 복잡한 스크롤 기반 애니메이션은 GSAP(ScrollTrigger)로 구현, 간단한 fade-in/scroll 애니메이션은 AOS로 빠르게 구현하여 개발 효율성 확보',
+            ' 라이브러리로 구현이 어려운 경우에는 CSS 애니메이션과 순수 JavaScript로 구현',
             '### 공용 컴포넌트 설계',
-            '- Header, GNB, Footer, IntersectionAppearDiv, 페이지 전환 로딩 처리',
-            '- 확장성 고려: React의 HTMLAttributes를 extends하여 기본 HTML 속성들을 그대로 활용할 수 있도록 설계하여 활용도 극대화',
-            '- 가독성 향상: 복잡한 로직이나 추가된 기능에 대해 주석 처리하여 다른 개발자들의 이해도 향상'
+            ' Header, GNB, Footer, IntersectionAppearDiv, 페이지 전환 로딩 처리',
+            ' 확장성 고려: React의 HTMLAttributes를 extends하여 기본 HTML 속성들을 그대로 활용할 수 있도록 설계하여 활용도 극대화',
+            ' 가독성 향상: 복잡한 로직이나 추가된 기능에 대해 주석 처리하여 다른 개발자들의 이해도 향상'
         ],
         assets: [
             `/assets/projects/기업 브랜딩 사이트/1.gif`,
             `/assets/projects/기업 브랜딩 사이트/1.png`,
         ],
         mainAsset: null,
-        url: 'https://portfoilo-sample-ce3e.vercel.app/branding-page'
+        url: 'https://portfoilo-sample-ce3e.vercel.app/branding-page',
+        pin: false,
     },
     supplmarket: {
         title: 'Supplmarket',
@@ -177,18 +161,16 @@ const projects = {
             '  - Next.js/Elysia 프레임워크로 Node.js 기반 풀스택 구조',
             '고객 및 셀러용 서비스 풀스택 개발 전담',
             '- 고객용 서비스',
-            '  - 상품 조회 · 장바구니 기능',
-            '  - 주문 및 결제 프로세스 (묶음 주문)',
-            '  - 주문 내역 관리 · 배송 추적 기능',
-            '  - 리뷰 시스템 · 교환/반품 시스템 (전체/일부)',
-            '  - 마이페이지',
+            '  - 상품 조회 · 장바구니',
+            '  - 주문 및 결제 프로세스',
+            '  - 주문 내역 관리 · 배송 추적',
+            '  - 리뷰 시스템 · 교환/반품 시스템',
             '- 셀러용 서비스',
-            '  - 홈 대시보드 (매출, 수익, 배송현황 등 통계)',
+            '  - 홈 통계 대시보드',
             '  - 상품, 주문 관리 · 정산 관리',
-            '  - 공동구매 관리 (상품, 스케줄, 상태 관리)',
+            '  - 공동구매 상품, 스케줄, 상태 관리',
             '- 공통 기능',
             '  - 토스페이먼츠 결제 연동 및 웹훅 처리',
-            '  - 알림 시스템 (알림톡/SMS/푸시)',
             '라이브 서비스 운영'
         ],
         totalDeveloper: 2,
@@ -221,7 +203,8 @@ const projects = {
             `/assets/projects/supplmarket/7.png`,
         ],
         mainAsset: 0,
-        url: 'https://supplmarket.com'
+        url: 'https://supplmarket.com',
+        pin: true,
     },
     '포포넛 비즈니스': {
         title: '포포넛 비즈니스',
@@ -353,7 +336,8 @@ const projects = {
             `/assets/projects/포포넛 비즈니스/10.png`,
         ],
         mainAsset: 1,
-        url: 'https://biz.pawpawnut.com'
+        url: 'https://biz.pawpawnut.com',
+        pin: true,
     },
     '포포넛 고객용': {
         title: '포포넛 고객용',
@@ -436,7 +420,8 @@ const projects = {
             `/assets/projects/포포넛 고객용/6.png`,
         ],
         mainAsset: 0,
-        url: 'https://www.pawpawnut.com/'
+        url: 'https://www.pawpawnut.com/',
+        pin: false,
     },
     '포포넛 앱': {
         title: '포포넛 앱',
@@ -523,7 +508,8 @@ const projects = {
             `/assets/projects/포포넛 앱/12.png`,
             `/assets/projects/포포넛 앱/13.png`,
         ],
-        mainAsset: 0
+        mainAsset: 0,
+        pin: false,
     },
     '포포넛 통합 서버': {
         title: '포포넛 통합 서버',
@@ -612,7 +598,8 @@ const projects = {
         ],
         assets: [
         ],
-        mainAsset: 0
+        mainAsset: 0,
+        pin: true,
     }
 }
 

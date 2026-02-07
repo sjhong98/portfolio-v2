@@ -4,10 +4,10 @@ import projects from "@/contents/projects";
 import sideProjects from "@/contents/sideProjects";
 import { useMode } from "@/hooks/useMode";
 import { useProject } from "@/hooks/useProject";
-import OpenInFullIcon from '@mui/icons-material/OpenInFull';
+import { useMediaQuery } from "@mui/material";
 import { memo, useCallback, useEffect, useState } from "react";
 import OverviewContainer from "./overviewContainer";
-import { useMediaQuery } from "@mui/material";
+import PushPinIcon from '@mui/icons-material/PushPin';
 
 export default function Project() {
     const { selectedProject } = useProject();
@@ -16,6 +16,12 @@ export default function Project() {
 
     const [isHovered, setIsHovered] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState<number | undefined>(undefined);
+
+    const sortPinnedProjects = useCallback((projectObject: object) => {
+        const pinnedProjects = Object.entries(projectObject).filter(([key, value]) => value?.pin).map(([key, value]) => value);
+        const unpinnedProjects = Object.entries(projectObject).filter(([key, value]) => !value?.pin).map(([key, value]) => value);
+        return [...pinnedProjects, ...unpinnedProjects];
+    }, [])
 
     const handleMouseEnter = (index: number) => {
         if (mode !== 'project' && mode !== undefined) return;
@@ -50,7 +56,7 @@ export default function Project() {
                 </div>
                 <div className='flex flex-col sm:gap-3 gap-2 mt-[-16px]'>
                     {
-                        Object.entries(projects).map(([key, value], index) => (
+                        sortPinnedProjects(projects).map((value, index) => (
                             <ProjectItem
                                 index={index}
                                 value={value}
@@ -71,7 +77,7 @@ export default function Project() {
                 </div>
                 <div className='flex flex-col sm:gap-3 gap-2 mt-[-16px]'>
                     {
-                        Object.entries(sideProjects).map(([key, value], index) => (
+                        sortPinnedProjects(sideProjects).map((value, index) => (
                             <ProjectItem
                                 index={index + Object.keys(projects).length}
                                 value={value}
@@ -135,13 +141,17 @@ const ProjectItem = memo(function ProjectItem({ handleMouseEnter, handleMouseLea
                 opacity: selected || hoveredIndex === undefined ? 1 : 0.5,
                 transition: 'opacity 0.15s ease-in-out',
             }}
-            className={`w-full flex flex-row justify-between gap-3 relative sm:px-4 px-0 py-4 sm:ml-[-16px] ml-[-0px] mb-[-12px] rounded-md cursor-pointer transition-[background-color,border-color,box-shadow] border-t-[1px] ${selected
-                    ? 'bg-sub-darkest border-sub-darker shadow-[0_5px_4px_rgba(0,0,0,0.1)]'
-                    : 'border-main'
+            className={`w-full flex flex-row gap-3 relative sm:px-10 px-0 py-4 sm:ml-[-16px] ml-[-0px] mb-[-12px] rounded-md cursor-pointer transition-[background-color,border-color,box-shadow] border-t-[1px] ${selected
+                ? 'bg-sub-darkest border-sub-darker shadow-[0_5px_4px_rgba(0,0,0,0.1)]'
+                : 'border-main'
                 }`}
         >
+            {value?.pin && <PushPinIcon className='sm:!block !hidden absolute left-0 ml-2.5 top-6 opacity-[0.8] rotate-45 mb-[-2px]' sx={{ fontSize: 18 }} />}
             <div className='flex flex-col sm:gap-2 gap-1'>
-                <p className='sm:text-xl text-lg font-bold'>{value.title}</p>
+                <div className='flex gap-2 items-center'>
+                    <p className='sm:text-xl text-lg font-bold'>{value.title}</p>
+                    {value?.pin && <PushPinIcon className='sm:!hidden !block opacity-[0.8] rotate-45' sx={{ fontSize: 14 }} />}
+                </div>
                 <p className='text-[14px] text-sub'>{value.description}</p>
             </div>
             {/* {
