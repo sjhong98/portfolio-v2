@@ -284,8 +284,13 @@ context를 custom hook과 연동하여 사용성 개선 경험.
                 {
                     id: 15,
                     title: 'React Query',
-                    description: ``,
-                    level: 1
+                    description: `2+ 프로젝트에서 React Query 데이터 페칭 경험 보유.
+
+data, error, isLoading, isError 사용 코드 복잡도 낮추고, 최적화된 상태 관리 구현 경험.
+
+config로 gcTime, refetchInterval 등 캐싱 및 재페칭 설정 경험.`,
+                    lines: 10,
+                    level: 2
                 }
             ]
         },
