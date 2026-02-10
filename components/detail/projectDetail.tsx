@@ -6,7 +6,7 @@ import BoyIcon from '@mui/icons-material/Boy';
 import { Dialog, DialogContent, Link, styled } from "@mui/material";
 import { PieChart } from '@mui/x-charts/PieChart';
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Close } from "@mui/icons-material";
 import { useDrawingArea } from "@mui/x-charts";
@@ -65,6 +65,10 @@ export default function ProjectDetail() {
     const [imageDialogOpen, setImageDialogOpen] = useState<number | undefined>(undefined);
     const [contributionsExpanded, setContributionsExpanded] = useState(false);
 
+    useEffect(() => {
+        setContributionsExpanded(false);
+    }, [selectedProject])
+
     // 스킬을 카테고리별로 그룹화
     const groupedSkills = useMemo(() => {
         if (!selectedProject?.skills) return [];
@@ -86,7 +90,7 @@ export default function ProjectDetail() {
                     cursor: mode !== undefined ? 'pointer' : 'default',
                     pointerEvents: mode !== undefined ? 'auto' : 'none',
                 }}
-                className='absolute left-[0%] top-[5%]'
+                className='absolute left-[0%] top-[5%] sm:block hidden'
                 onClick={() => switchMode(undefined)}
             >
                 <ArrowBackIcon />
@@ -106,24 +110,26 @@ export default function ProjectDetail() {
                         </div>
 
                         {/* Assets */}
-                        <div className='sm:h-[308px] h-[230px] overflow-x-scroll flex flex-row gap-4 sm:ml-0 ml-[-24px] sm:w-full w-[calc(100%+48px)] pb-2 sm:px-0 px-6 scrollbar-px'>
-                            {imageAssets.map((asset: string, index: number) => (
-                                <div key={asset} className="h-full w-fit flex-shrink-0">
-                                    <Image
-                                        key={asset}
-                                        src={asset}
-                                        alt={selectedProject.title}
-                                        width={500}
-                                        height={500}
-                                        className='h-full w-auto object-cover cursor-pointer rounded-md'
-                                        onClick={() => setImageDialogOpen(index)}
-                                    />
-                                </div>
-                            ))}
-                        </div>
+                        {(imageAssets && imageAssets.length > 0) && (
+                            <div className='sm:h-[308px] h-[230px] overflow-x-scroll flex flex-row gap-4 sm:ml-0 ml-[-24px] sm:w-full w-[calc(100%+48px)] pb-2 sm:px-0 px-6 scrollbar-px'>
+                                {imageAssets.map((asset: string, index: number) => (
+                                    <div key={asset} className="h-full w-fit flex-shrink-0">
+                                        <Image
+                                            key={asset}
+                                            src={asset}
+                                            alt={selectedProject.title}
+                                            width={500}
+                                            height={500}
+                                            className='h-full w-auto object-cover cursor-pointer rounded-md'
+                                            onClick={() => setImageDialogOpen(index)}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        )}
 
-                        { selectedProject.url && (
-                            <div className='flex flex-row gap-1 items-center bg-sub-darker rounded-sm px-3 py-[2px] w-fit cursor-pointer hover:bg-sub-darkest transition-all duration-100'>
+                        {selectedProject.url && (
+                            <div className='flex flex-row gap-1 items-center bg-sub-darker text-sub-light rounded-sm px-3 py-[2px] w-fit cursor-pointer hover:bg-sub-darkest transition-all duration-100'>
                                 <p>Link</p>
                                 <Link href={selectedProject.url} target="_blank">
                                     <InsertLinkIcon sx={{ fontSize: 25, color: 'var(--color-sub-light)' }} />
@@ -206,7 +212,7 @@ export default function ProjectDetail() {
                                 // 4. '  -' (2칸 공백 + 하이픈) -> h5
                                 if (contribution.startsWith('  -')) {
                                     return (
-                                        <h5 key={index} className="text-sm text-text font-light ml-4">
+                                        <h5 key={index} className="text-[15px] text-text font-light ml-4">
                                             {contribution.replace('  -', '').trim()}
                                         </h5>
                                     );
@@ -215,7 +221,7 @@ export default function ProjectDetail() {
                                 // 3. '- ' -> h4
                                 if (contribution.startsWith('- ')) {
                                     return (
-                                        <h4 key={index} className="text-md text-text font-medium ml-0 mb-[-1px] mt-1.5">
+                                        <h4 key={index} className="text-[17px] text-text font-semibold ml-0 mb-[-0px] mt-1.5">
                                             {contribution.replace('- ', '')}
                                         </h4>
                                     );
@@ -223,7 +229,7 @@ export default function ProjectDetail() {
 
                                 // 2. 바로 문자가 시작되는 경우 -> h3
                                 return (
-                                    <h3 key={index} className="text-lg text-sub-light font-bold mt-2 mb-[-4px]">
+                                    <h3 key={index} className="text-xl text-sub-light font-bold mt-3 mb-[-0px]">
                                         {contribution}
                                     </h3>
                                 );
@@ -247,7 +253,7 @@ export default function ProjectDetail() {
                             // 1. '### '로 시작하거나 바로 문자가 시작되는 경우 -> h3
                             if (detail.match(/^### (.+)$/)) {
                                 return (
-                                    <h3 key={index} className="text-lg text-sub-light font-bold mt-4 mb-0">
+                                    <h3 key={index} className="text-xl text-sub-light font-bold mt-4 mb-0.5">
                                         {detail.replace('### ', '')}
                                     </h3>
                                 );
@@ -258,18 +264,18 @@ export default function ProjectDetail() {
                                 return (
                                     <div key={index} className='flex flex-row gap-2 mt-[-2px]'>
                                         {detail.startsWith('t: ') || detail.startsWith('s: ') ? (
-                                            <div className='flex gap-1 items-center'>
-                                                <h5 className="text-sm text-text font-semibold rounded-md bg-sub-darker px-1 ml-0">
+                                            <div className='flex gap-1'>
+                                                <h5 className="text-[15px] text-text font-semibold rounded-md bg-sub-darker px-1 ml-0 whitespace-nowrap h-fit">
                                                     {detail.startsWith('t: ') ? '문제 상황' : '해결 방식'}
                                                 </h5>
-                                                <h5 className="text-sm text-text font-light ml-0">
+                                                <h5 className="text-[15px] text-text font-light ml-0">
                                                     {detail.replace('t: ', '').replace('s: ', '')}
                                                 </h5>
                                             </div>
                                         ) : (
                                             <>
                                                 <span className="text-sm text-text font-light">·</span>
-                                                <h5 className="text-sm text-text font-light ml-0">
+                                                <h5 className="text-[15px] text-text font-light ml-0">
                                                     {detail}
                                                 </h5>
                                             </>
@@ -306,7 +312,7 @@ export default function ProjectDetail() {
                 onClose={() => setImageDialogOpen(undefined)}
             >
                 <DialogContent sx={{ padding: 0 }}>
-                    {imageAssets[imageDialogOpen ?? 0] && (
+                    {imageDialogOpen !== undefined && imageAssets[imageDialogOpen] && (
                         <Image
                             src={imageAssets[imageDialogOpen ?? 0]}
                             alt={imageAssets[imageDialogOpen ?? 0]}
