@@ -106,6 +106,11 @@ const ProjectItem = memo(function ProjectItem({ handleMouseEnter, handleMouseLea
     const onClick = useCallback((e: any) => {
         if (mode !== 'project' && mode !== undefined) return;
 
+        const detailComponent = document.getElementById('detail-component');
+        if (detailComponent) {
+            detailComponent.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         switchMode('project')
         setSelectedProject(value)
         e.stopPropagation();

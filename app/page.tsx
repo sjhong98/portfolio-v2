@@ -107,6 +107,7 @@ export default function Home() {
 
         {/* pc */}
         <div
+          id='detail-component'
           style={{
             left: detailLeft,
             display: isMobile ? 'none' : detailDisplay,
