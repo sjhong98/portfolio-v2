@@ -249,10 +249,6 @@ const sideProjects = {
             '소규모 프로젝트에서 개발시간 단축 및 타입 안정성 위해 적용',
             '초기 데이터: Server Component에서 패치 후 props로 전달 -> SSR 적용되어 UX 최적화',
             '인터렉션 데이터: Client Component에서 Server Action 호출',
-            '### BlockNote 기반 상세조회 및 에디터 기능 통합',
-            'JSON 기반 블록 데이터 구조 관리: BlockNote의 블록 데이터를 JSON 문자열로 저장하고 파싱하여 에디터 상태와 동기화',
-            '자동 저장 기능: 2초 debounce 적용된 자동 저장 기능 구현',
-            '목차 자동 생성 및 ScrollIntoView 기능 구현',
             '### DB 스키마 자동 타입 생성 로직',
             'drizzle-kit pull로 데이터베이스 스키마 동기화',
             'createTypesFromSchema.ts 스크립트로 타입 자동 생성',
@@ -267,7 +263,8 @@ const sideProjects = {
             `/assets/projects/sjlog/1.png`,
         ],
         mainAsset: 0,
-        url: 'https://sjlog.vercel.app/dev/sjhong98@icloud.com'
+        url: 'https://sjlog.vercel.app/dev/sjhong98@icloud.com',
+        pin: true,
     }
 }
 

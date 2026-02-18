@@ -16,6 +16,47 @@ import { useMode } from "@/hooks/useMode";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
 
+// *로 감싸진 텍스트를 font-semibold로 처리하는 함수
+function renderTextWithBold(text: string): (string | React.ReactElement)[] | string {
+    const parts: (string | React.ReactElement)[] = [];
+    const regex = /\*([^*]+)\*/g;
+    let lastIndex = 0;
+    let match;
+    let key = 0;
+
+    while ((match = regex.exec(text)) !== null) {
+        // 매칭 전의 텍스트 추가
+        if (match.index > lastIndex) {
+            parts.push(text.substring(lastIndex, match.index));
+        }
+        // *로 감싸진 부분을 font-semibold로 처리
+        parts.push(
+            <span key={key++} className="font-semibold">
+                {match[1]}
+            </span>
+        );
+        lastIndex = regex.lastIndex;
+    }
+    // 남은 텍스트 추가
+    if (lastIndex < text.length) {
+        parts.push(text.substring(lastIndex));
+    }
+
+    return parts.length > 0 ? parts : text;
+}
+
+// detail 텍스트의 prefix를 처리하는 함수 (t:, s:, r:)
+function parseDetailText(detail: string): { label: string | null; text: string } {
+    if (detail.startsWith('t: ')) {
+        return { label: '문제 상황', text: detail.replace('t: ', '') };
+    } else if (detail.startsWith('s: ')) {
+        return { label: '해결 방식', text: detail.replace('s: ', '') };
+    } else if (detail.startsWith('r: ')) {
+        return { label: '결과', text: detail.replace('r: ', '') };
+    }
+    return { label: null, text: detail };
+}
+
 // 스킬을 카테고리별로 그룹화하는 함수
 function groupSkillsByCategory(skills: string[]) {
     const skillCategoryMap: Record<string, string> = {};
@@ -105,8 +146,8 @@ export default function ProjectDetail() {
                     {/* Title */}
                     <div className='flex flex-col sm:gap-6 gap-8'>
                         <div className='flex flex-col sm:gap-0 gap-2'>
-                            <h2 className="text-4xl text-sub-light font-black">{selectedProject.title}</h2>
-                            <p className="sm:text-lg text-md sm:leading-normal leading-tight text-sub">{selectedProject.description}</p>
+                            <h2 className="text-4xl text-white font-black">{selectedProject.title}</h2>
+                            <p className="sm:text-lg text-md sm:leading-normal leading-tight text-sub-light">{selectedProject.description}</p>
                         </div>
 
                         {/* Assets */}
@@ -144,14 +185,14 @@ export default function ProjectDetail() {
                             // 1. '### '로 시작하거나 바로 문자가 시작되는 경우 -> h3
                             if (feature.match(/^## (.+)$/)) {
                                 return (
-                                    <h3 key={index} className="sm:text-lg text-md text-sub-light font-bold mt-2 mb-0">
+                                    <h3 key={index} className="sm:text-lg text-md text-white font-bold mt-2 mb-0">
                                         {feature.replace('## ', '')}
                                     </h3>
                                 )
                             }
                             else {
                                 return (
-                                    <span key={index} className="sm:text-[16px] text-[15px] text-text font-light">· {feature}</span>
+                                    <span key={index} className="sm:text-[16px] text-[15px] text-white font-light">· {feature}</span>
                                 )
                             }
                         })}
@@ -162,7 +203,7 @@ export default function ProjectDetail() {
                         <div className={`flex flex-col relative gap-1 overflow-hidden transition-all duration-300 ${contributionsExpanded ? 'max-h-none' : 'max-h-[80px]'}`}>
                             <div className="flex gap-3 h-30 sm:mt-0 mt-4 max-w-[300px]">
                                 <div className='flex flex-col items-center'>
-                                    <div className='flex flex-row gap-0 text-sub-light'>
+                                    <div className='flex flex-row gap-0 text-white'>
                                         <BoyIcon sx={{ fontSize: 55 }} />
                                         {Boolean(selectedProject.totalDeveloper > 0)
                                             && new Array(selectedProject.totalDeveloper - 1).fill(0).map((_, index) => (
@@ -212,7 +253,7 @@ export default function ProjectDetail() {
                                 // 4. '  -' (2칸 공백 + 하이픈) -> h5
                                 if (contribution.startsWith('  -')) {
                                     return (
-                                        <h5 key={index} className="text-[15px] text-text font-light ml-4">
+                                        <h5 key={index} className="text-[15px] text-white font-light ml-4">
                                             {contribution.replace('  -', '').trim()}
                                         </h5>
                                     );
@@ -221,7 +262,7 @@ export default function ProjectDetail() {
                                 // 3. '- ' -> h4
                                 if (contribution.startsWith('- ')) {
                                     return (
-                                        <h4 key={index} className="text-[17px] text-text font-semibold ml-0 mb-[-0px] mt-1.5">
+                                        <h4 key={index} className="text-[17px] text-white font-semibold ml-0 mb-[-0px] mt-1.5">
                                             {contribution.replace('- ', '')}
                                         </h4>
                                     );
@@ -229,7 +270,7 @@ export default function ProjectDetail() {
 
                                 // 2. 바로 문자가 시작되는 경우 -> h3
                                 return (
-                                    <h3 key={index} className="text-xl text-sub-light font-bold mt-3 mb-[-0px]">
+                                    <h3 key={index} className="text-xl text-white font-bold mt-3 mb-[-0px]">
                                         {contribution}
                                     </h3>
                                 );
@@ -242,7 +283,7 @@ export default function ProjectDetail() {
 
                     <button
                         onClick={() => setContributionsExpanded(!contributionsExpanded)}
-                        className="mt-2 text-sm text-sub-light hover:text-text transition-colors mt-[-30px] cursor-pointer"
+                        className="mt-2 text-sm text-sub-light hover:text-white transition-colors mt-[-30px] cursor-pointer"
                     >
                         {contributionsExpanded ? '접기' : '펼치기'}
                     </button>
@@ -253,7 +294,7 @@ export default function ProjectDetail() {
                             // 1. '### '로 시작하거나 바로 문자가 시작되는 경우 -> h3
                             if (detail.match(/^### (.+)$/)) {
                                 return (
-                                    <h3 key={index} className="text-xl text-sub-light font-bold mt-4 mb-0.5">
+                                    <h3 key={index} className="text-xl text-white font-bold mt-4 mb-0.5">
                                         {detail.replace('### ', '')}
                                     </h3>
                                 );
@@ -261,22 +302,23 @@ export default function ProjectDetail() {
 
                             // 2. 일반 문자열 -> h5
                             else {
+                                const { label, text } = parseDetailText(detail);
                                 return (
                                     <div key={index} className='flex flex-row gap-2 mt-[-2px]'>
-                                        {detail.startsWith('t: ') || detail.startsWith('s: ') ? (
+                                        {label ? (
                                             <div className='flex gap-1'>
-                                                <h5 className="text-[15px] text-text font-semibold rounded-md bg-sub-darker px-1 ml-0 whitespace-nowrap h-fit">
-                                                    {detail.startsWith('t: ') ? '문제 상황' : '해결 방식'}
+                                                <h5 className="text-[15px] text-white font-semibold rounded-md bg-sub-darker px-1 ml-0 whitespace-nowrap h-fit">
+                                                    {label}
                                                 </h5>
-                                                <h5 className="text-[15px] text-text font-light ml-0">
-                                                    {detail.replace('t: ', '').replace('s: ', '')}
+                                                <h5 className="text-[15px] text-white font-light ml-0">
+                                                    {renderTextWithBold(text)}
                                                 </h5>
                                             </div>
                                         ) : (
                                             <>
-                                                <span className="text-sm text-text font-light">·</span>
-                                                <h5 className="text-[15px] text-text font-light ml-0">
-                                                    {detail}
+                                                <span className="text-sm text-sub-light font-light">·</span>
+                                                <h5 className="text-[15px] text-white font-light ml-0">
+                                                    {renderTextWithBold(detail)}
                                                 </h5>
                                             </>
                                         )
@@ -296,7 +338,7 @@ export default function ProjectDetail() {
                                     {skills.map((skill: string) => (
                                         <div key={skill} className='flex flex-col min-w-14 h-12 justify-between gap-1 bg-sub-darkest rounded-sm shadow-lg px-2 pt-2 pb-1'>
                                             <Image src={`/assets/skills/${skill}.svg`} alt={skill} width={16} height={16} />
-                                            <span className="text-[12px] text-sub font-light">{skill}</span>
+                                            <span className="text-[12px] text-sub-light font-light">{skill}</span>
                                         </div>
                                     ))}
                                 </div>
