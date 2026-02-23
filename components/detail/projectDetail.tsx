@@ -46,13 +46,13 @@ function renderTextWithBold(text: string): (string | React.ReactElement)[] | str
 }
 
 // detail 텍스트의 prefix를 처리하는 함수 (t:, s:, r:)
-function parseDetailText(detail: string): { label: string | null; text: string } {
+function parseDetailText(detail: string): { label: string | null; text: string, className?: string } {
     if (detail.startsWith('t: ')) {
-        return { label: '문제 상황', text: detail.replace('t: ', '') };
+        return { label: '문제 상황', text: detail.replace('t: ', ''), className: 'mb-4' };
     } else if (detail.startsWith('s: ')) {
-        return { label: '해결 방식', text: detail.replace('s: ', '') };
+        return { label: '해결 방식', text: detail.replace('s: ', ''), className: 'mb-4' };
     } else if (detail.startsWith('r: ')) {
-        return { label: '결과', text: detail.replace('r: ', '') };
+        return { label: '결과', text: detail.replace('r: ', ''), className: 'mb-4' };
     }
     return { label: null, text: detail };
 }
@@ -302,12 +302,12 @@ export default function ProjectDetail() {
 
                             // 2. 일반 문자열 -> h5
                             else {
-                                const { label, text } = parseDetailText(detail);
+                                const { label, text, className } = parseDetailText(detail);
                                 return (
-                                    <div key={index} className='flex flex-row gap-2 mt-[-2px]'>
+                                    <div key={index} className={`flex flex-row gap-2 mt-[-2px] ${className}`}>
                                         {label ? (
                                             <div className='flex gap-1'>
-                                                <h5 className="text-[15px] text-white font-semibold rounded-md bg-sub-darker px-1 ml-0 whitespace-nowrap h-fit">
+                                                <h5 className="text-[14px] mt-[1px] text-sub-darkest font-semibold rounded-[3px] bg-sub-light mr-1 px-0.5 ml-0 whitespace-nowrap h-fit">
                                                     {label}
                                                 </h5>
                                                 <h5 className="text-[15px] text-white font-light ml-0">

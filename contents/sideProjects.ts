@@ -59,7 +59,8 @@ const sideProjects = {
             `/assets/projects/자사 브랜딩 사이트/5.png`,
         ],
         mainAsset: 1,
-        url: 'https://www.ibrdos.com/'
+        url: 'https://www.ibrdos.com/',
+        pin: false,
     },
     라이프커밋: {
         title: '라이프커밋',
@@ -137,7 +138,7 @@ const sideProjects = {
         ],
         mainAsset: 0,
         url: 'https://apps.apple.com/kr/app/%EB%9D%BC%EC%9D%B4%ED%94%84%EC%BB%A4%EB%B0%8B/id6504664677',
-        pin: true,
+        pin: false,
     },
     '주유기록 인앱토스': {
         title: '주유기록 인앱토스',
@@ -202,11 +203,12 @@ const sideProjects = {
             `/assets/projects/주유기록 인앱토스/4.png`,
             `/assets/projects/주유기록 인앱토스/5.png`,
         ],
-        mainAsset: 0
+        mainAsset: 0,
+        pin: false,
     },
     sjlog: {
         title: 'Sjlog',
-        description: '인생의 여러가지 기록을 효율적으로 작성·관리할 수 있는 통합 서비스',
+        description: '효율적인 기록을 위한 블로그 플랫폼',
         features: [
             '일기, 가계부 등 항목별 맞춤 UI 제공',
             '블로그 글 작성 및 관리: 폴더 구조 + 자동 저장 에디터(blockNote)',

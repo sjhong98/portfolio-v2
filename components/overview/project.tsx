@@ -5,7 +5,7 @@ import sideProjects from "@/contents/sideProjects";
 import { useMode } from "@/hooks/useMode";
 import { useProject } from "@/hooks/useProject";
 import { useMediaQuery } from "@mui/material";
-import { memo, useCallback, useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import OverviewContainer from "./overviewContainer";
 import PushPinIcon from '@mui/icons-material/PushPin';
 
@@ -15,20 +15,18 @@ export default function Project() {
     const isMobile = useMediaQuery('(max-width: 768px)');
 
     const [isHovered, setIsHovered] = useState(false);
-    const [hoveredIndex, setHoveredIndex] = useState<number | undefined>(undefined);
+    const [hoveredIndex, setHoveredIndex] = useState<string | undefined>(undefined);
 
-    const sortPinnedProjects = useCallback((projectObject: object) => {
-        const pinnedProjects = Object.entries(projectObject).filter(([key, value]) => value?.pin).map(([key, value]) => value);
-        const unpinnedProjects = Object.entries(projectObject).filter(([key, value]) => !value?.pin).map(([key, value]) => value);
-        return [...pinnedProjects, ...unpinnedProjects];
-    }, [])
+    const pinnedProjects = useMemo(() => [...Object.entries(projects).filter(([key, value]) => value?.pin).map(([key, value]) => value), ...Object.entries(sideProjects).filter(([key, value]) => value?.pin).map(([key, value]) => value)], [projects, sideProjects]);
+    const mainProjectsWithoutPinned = useMemo(() => Object.entries(projects).filter(([key, value]) => !value?.pin).map(([key, value]) => value), [projects]);
+    const sideProjectsWithoutPinned = useMemo(() => Object.entries(sideProjects).filter(([key, value]) => !value?.pin).map(([key, value]) => value), [sideProjects]);
 
-    const handleMouseEnter = (index: number) => {
+    const handleMouseEnter = (key: string) => {
         if (mode !== 'project' && mode !== undefined) return;
         if (isMobile) return;
 
         setIsHovered(true);
-        setHoveredIndex(index);
+        setHoveredIndex(key);
     }
 
     const handleMouseLeave = () => {
@@ -52,20 +50,41 @@ export default function Project() {
         <OverviewContainer className='flex flex-col gap-16 duration-150' title='project'>
             <div className='w-full flex flex-col sm:gap-8 gap-5'>
                 <div className='flex gap-2 justify-between items-center'>
-                    <p className='text-md font-bold text-sub'>Main Projects</p>
+                    <p className='text-md font-bold text-sub'>Pinned Projects</p>
                 </div>
                 <div className='flex flex-col sm:gap-3 gap-2 mt-[-16px]'>
                     {
-                        sortPinnedProjects(projects).map((value, index) => (
+                        pinnedProjects.map((value, index) => (
                             <ProjectItem
-                                index={index}
+                                index={value.title}
                                 value={value}
-                                handleMouseEnter={handleMouseEnter}
+                                handleMouseEnter={() => handleMouseEnter(value.title)}
                                 handleMouseLeave={handleMouseLeave}
                                 switchMode={switchMode}
                                 isHovered={isHovered}
                                 hoveredIndex={hoveredIndex}
-                                key={index}
+                                key={value.title}
+                            />
+                        ))
+                    }
+                </div>
+            </div>
+            <div className='w-full flex flex-col sm:gap-8 gap-5'>
+                <div className='flex gap-2 justify-between items-center'>
+                    <p className='text-md font-bold text-sub'>Main Projects</p>
+                </div>
+                <div className='flex flex-col sm:gap-3 gap-2 mt-[-16px]'>
+                    {
+                        mainProjectsWithoutPinned.map((value, index) => (
+                            <ProjectItem
+                                index={value.title}
+                                value={value}
+                                handleMouseEnter={() => handleMouseEnter(value.title)}
+                                handleMouseLeave={handleMouseLeave}
+                                switchMode={switchMode}
+                                isHovered={isHovered}
+                                hoveredIndex={hoveredIndex}
+                                key={value.title}
                             />
                         ))
                     }
@@ -77,16 +96,16 @@ export default function Project() {
                 </div>
                 <div className='flex flex-col sm:gap-3 gap-2 mt-[-16px]'>
                     {
-                        sortPinnedProjects(sideProjects).map((value, index) => (
+                        sideProjectsWithoutPinned.map((value, index) => (
                             <ProjectItem
-                                index={index + Object.keys(projects).length}
+                                index={value.title}
                                 value={value}
-                                handleMouseEnter={handleMouseEnter}
+                                handleMouseEnter={() => handleMouseEnter(value.title)}
                                 handleMouseLeave={handleMouseLeave}
                                 switchMode={switchMode}
                                 isHovered={isHovered}
                                 hoveredIndex={hoveredIndex}
-                                key={index + Object.keys(projects).length}
+                                key={value.title}
                             />
                         ))
                     }
@@ -96,7 +115,7 @@ export default function Project() {
     )
 }
 
-const ProjectItem = memo(function ProjectItem({ handleMouseEnter, handleMouseLeave, switchMode, isHovered, hoveredIndex, index, value }: { handleMouseEnter: (index: number) => void, handleMouseLeave: () => void, switchMode: (mode: string) => void, isHovered: boolean, hoveredIndex: number | undefined, index: number, value: any }) {
+const ProjectItem = memo(function ProjectItem({ handleMouseEnter, handleMouseLeave, switchMode, isHovered, hoveredIndex, index, value }: { handleMouseEnter: (e: React.MouseEvent<HTMLDivElement>) => void, handleMouseLeave: () => void, switchMode: (mode: string) => void, isHovered: boolean, hoveredIndex: string | undefined, index: string, value: any }) {
     const { setSelectedProject, selectedProject } = useProject();
     const { mode } = useMode();
     const isMobile = useMediaQuery('(max-width: 768px)');
@@ -139,7 +158,7 @@ const ProjectItem = memo(function ProjectItem({ handleMouseEnter, handleMouseLea
 
     return (
         <div
-            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => handleMouseEnter(e)}
             onMouseLeave={handleMouseLeave}
             onClick={onClick}
             style={{
