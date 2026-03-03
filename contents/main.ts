@@ -1,11 +1,12 @@
 const mainContent = {
-  about: `1년 9개월 동안 웹·앱 기획·개발·운영 스타트업 아이비알도스에서 풀스택 개발자로 근무하며 총 4개의 서비스 개발과 3개의 사내 사이드 프로젝트에 참여했습니다. 총 7개 프로젝트에서 프론트엔드 개발을 담당했고, 이 중 4개 프로젝트에서 백엔드까지 담당하여 풀스택 개발을 진행했습니다.
-
-모든 프로젝트는 기획 단계부터 참여하여 서비스 요구사항 정의, 기술 스택 선택, UI·UX 흐름 검토, DB 설계, 프로젝트 초기 세팅 등 서비스 구축 전 과정에 관여했습니다.
-
-각 프로젝트에서 맡은 기능을 단독으로 구현하고, 해당 기능에 대한 구조 개선과 유지·보수까지 지속적으로 담당했습니다. 또한 라이브 서비스를 운영하며 즉각적인 장애 대응, 성능 최적화를 경험하며 운영 환경에서의 문제 분석 및 해결 역량을 갖추었습니다.
-
-이러한 경험을 통해 Next.js·React Native·Node.js 기반의 풀스택 개발 기술과 AWS 환경 서버 운영 경험을 쌓았습니다. 스타트업 환경에서 기획·디자인 분야와의 긴밀히 소통하며 협업 능력을 키워 기획부터 출시까지 프로젝트를 성공적으로 완료한 경험을 보유하고 있습니다.`,
+  aboutTitle:
+    "Next.js/React/Node.js 기반 서비스의 설계·개발·운영 전 과정을 경험한 프론트엔드 중심 풀스택 개발자입니다.",
+  about: [
+    `스타트업에서 4개 서비스를 출시·운영하며 매장 관리·예약 플랫폼과 커머스 서비스의 핵심 도메인을 설계했습니다.`,
+    `성능 최적화에 관심을 가지고 기술 블로그와 사이드 프로젝트를 통해 학습한 내용을 실무에 적용해왔습니다.`,
+    `타 직군과 긴밀하게 협업하며 요구사항을 정의하고 서비스를 출시해왔습니다.`,
+    `개발자이기 이전에 팀원으로서, 조직의 목표를 기준으로 의사결정해왔습니다.`,
+  ],
   aboutDetail: [
     {
       section: "개요",
@@ -89,7 +90,7 @@ SEO 최적화를 위해 SSR 방식을 적용하여 검색엔진이 빠르게 HTM
     },
     {
       date: "2024/03 ― 2025/11",
-      content: "아이비알도스 개발팀 근무",
+      content: "IBRDOS 개발팀 근무",
       role: "웹·앱 풀스택 개발",
       subContent1: `포포넛|START_LINK|https://pawpawnut.com/|END_LINK|, Supplmarket|START_LINK|https://supplmarket.com/|END_LINK|, 라이프커밋|START_LINK|https://apps.apple.com/us/app/%EB%9D%BC%EC%9D%B4%ED%94%84%EC%BB%A4%EB%B0%8B/id6504664677|END_LINK| 등 프로젝트 참여`,
     },
@@ -101,12 +102,12 @@ SEO 최적화를 위해 SSR 방식을 적용하여 검색엔진이 빠르게 HTM
         {
           id: 0,
           title: "Next.js",
-          description: `7+ 프로젝트에서 Next.js 13-15 기반 애플리케이션을 설계·구현한 경험 보유.
+          description: `7+ 프로젝트에서 Next.js 기반 애플리케이션을 설계·구현 경험.
 
-App Router 활용 서버 컴포넌트, Server Actions, Middleware 기반 인증 구현, 렌더링 전략을 프로젝트 특성에 맞게 선택·적용함. 
+SSR/SSG/ISR 전략과 Next Server Cache를 활용한 성능 최적화 경험
 
-SEO 및 성능 최적화를 통한 서비스 개선에 익숙함.`,
-          lines: 10,
+Server Actions 활용한 모놀리식 프로젝트 경험`,
+          lines: 8,
           level: 3,
         },
         {
@@ -114,10 +115,10 @@ SEO 및 성능 최적화를 통한 서비스 개선에 익숙함.`,
           title: "React",
           description: `7+ 프로젝트에서 React 기반 애플리케이션을 개발한 경험 보유.
 
-함수형 컴포넌트와 Hooks를 활용한 상태 관리 및 성능 최적화에 익숙하며, Context API, Zustand, Recoil 등 프로젝트 특성에 맞는 상태 관리 전략을 선택·적용함. 
+공용 컴포넌트 설계 경험과 Custom Hooks를 활용한 UI와 로직 분리 경험.
 
-비즈니스 로직을 커스텀 훅으로 분리하고, 재사용 가능한 컴포넌트 설계를 통해 유지보수성을 높이는 개발에 익숙함.`,
-          lines: 11,
+Concurrent Rendering / Suspense 활용 경험.`,
+          lines: 8,
           level: 3,
         },
         {
@@ -125,22 +126,11 @@ SEO 및 성능 최적화를 통한 서비스 개선에 익숙함.`,
           title: "React Native",
           description: `4+ 프로젝트에서 Expo 기반 React Native 애플리케이션 개발 경험 보유.
 
-Expo Router, React Navigation 활용 라우팅에 익숙하며, 이미지 피커, 푸시 알림 등 네이티브 모듈 통합 경험 보유. 
+Webview 구현 및 웹과 앱 간 내부 통신 구현 경험.
 
-react-native-webview 활용 WebView 기반 콘텐츠 통합 경험 보유. JavaScript 주입, 네비게이션 제어, 쿠키 관리 등 WebView와 네이티브 간 통신 구현에 익숙함.
-
-EAS Build와 EAS Updates를 활용한 빌드 및 OTA 업데이트 관리 경험 보유.`,
-          lines: 14,
+EAS 활용한 빌드 및 OTA 업데이트 관리 경험.`,
+          lines: 8,
           level: 2,
-        },
-        {
-          id: 3,
-          title: "Vite",
-          description: `Vite 기반 React 애플리케이션 개발 경험 보유.
-
-개발 서버 설정(host, port), TypeScript와 함께 사용하여 타입 안전성을 확보한 개발 경험.`,
-          lines: 7,
-          level: 1,
         },
       ],
     },
@@ -152,21 +142,15 @@ EAS Build와 EAS Updates를 활용한 빌드 및 OTA 업데이트 관리 경험 
           title: "Tailwind CSS",
           description: `7+ 프로젝트에서 Tailwind CSS를 활용한 스타일링 경험 보유.
 
-유틸리티 클래스 기반의 빠른 UI 개발에 익숙하며, 커스텀 테마 설정, 플러그인 확장을 통한 기능 확장 경험 보유. 
-
-prefix variant 활용한 반응형 구현과 이벤트 핸들링, CSS 변수를 통한 동적 테마 관리에 익숙함.`,
-          lines: 10,
+Prefix 활용과 CSS 변수 활용한 디자인 토큰 관리 경험.`,
+          lines: 6,
           level: 3,
         },
         {
           id: 5,
           title: "Ant Design (Antd)",
-          description: `Ant Design 기반 관리자 대시보드 및 복잡한 폼 UI 개발 경험 보유.
-
-Form, Table, Modal 등 핵심 컴포넌트 활용 데이터 관리 인터페이스 구현 경험. 
-
-복잡한 테이블 편집, 필터링, 정렬 기능 구현을 경험함.`,
-          lines: 8,
+          description: `Ant Design 기반 관리자 대시보드 및 Form UI 개발 경험 보유.`,
+          lines: 4,
           level: 2,
         },
         {
@@ -174,32 +158,15 @@ Form, Table, Modal 등 핵심 컴포넌트 활용 데이터 관리 인터페이�
           title: "Mui",
           description: `4+ 프로젝트에서 MUI 활용 개발 경험 보유.
 
-Drawer, Modal, Dialog, Accordion 등 핵심 컴포넌트를 적극 활용한 빠른 UI 개발과 커스터마이징에 익숙함.
-
-ThemeProvider와 createTheme를 통한 디자인 시스템 구축 경험.`,
-          lines: 8,
+Mui 기반 관리자 대시보드 및 Form UI 개발 경험 보유.`,
+          lines: 5,
           level: 2,
         },
         {
           id: 7,
           title: "ShadCn",
-          description: `shadcn/ui 기반 컴포넌트 시스템 구축 경험 보유.
-
-Tailwind CSS와의 통합, 커스터마이징 가능한 컴포넌트 설계에 익숙함. 
-
-프로젝트별 요구사항에 맞춘 컴포넌트 확장 및 재사용 가능한 UI 라이브러리 구축 경험 보유.`,
-          lines: 9,
-          level: 2,
-        },
-        {
-          id: 8,
-          title: "Radix UI",
-          description: `Radix UI 프리미티브를 활용한 접근성 높은 컴포넌트 개발 경험 보유.
-
-AlertDialog, Popover, Select, Accordion 등 헤드리스 UI 컴포넌트 구현에 익숙하며, 키보드 네비게이션, 포커스 관리를 통한 통한 접근성 확보 경험 보유. 
-
-Tailwind CSS와 결합한 스타일링 및 커스텀 컴포넌트 확장에 익숙함.`,
-          lines: 10,
+          description: `shadcn/ui 기반 컴포넌트 시스템 구축 경험 보유.`,
+          lines: 4,
           level: 2,
         },
         {
@@ -207,10 +174,8 @@ Tailwind CSS와 결합한 스타일링 및 커스텀 컴포넌트 확장에 익�
           title: "GSAP",
           description: `2+ 프로젝트에서 GSAP를 활용한 웹 애니메이션 구현 경험 보유.
 
-ScrollTrigger 플러그인을 활용한 스크롤 기반 애니메이션, Timeline을 통한 복잡한 애니메이션 시퀀스 제어, 성능 최적화된 애니메이션 구현 경험.
-
-Pin 애니메이션, 스크롤 기반 트리거, 반응형 애니메이션 대응 경험 보유.`,
-          lines: 10,
+ScrollTrigger 플러그인을 활용한 스크롤 기반 애니메이션, Pin, Timeline 등을 통한 복잡한 애니메이션 시퀀스 제어 경험`,
+          lines: 7,
           level: 2,
         },
       ],
@@ -454,33 +419,6 @@ sql 템플릿으로 집계 함수 사용, 스키마 파일 자동 업데이트 �
       ],
     },
     {
-      category: "API Design · Contract · Documentation",
-      skills: [
-        {
-          id: 29,
-          title: "Openapi",
-          description: `3 프로젝트에서 OpenAPI 기반 타입 안전 API 개발 경험 보유. 
-                    
-openapi-typescript로 Swagger JSON에서 TypeScript 타입 자동 생성, openapi-fetch로 타입 안전한 API 호출 구현. 
-
-개발/프로덕션 환경별 스크립트로 타입 자동 업데이트, 프론트엔드-백엔드 간 API 스펙 동기화 경험.`,
-          lines: 11,
-          level: 2,
-        },
-        {
-          id: 30,
-          title: "Swagger",
-          description: `3 프로젝트에서 Swagger 기반 API 문서화 경험 보유. 
-                    
-Fastify/Elysia 프레임워크에서 Swagger 플러그인 활용해 OpenAPI 스펙 자동 생성, Swagger UI로 인터랙티브 문서 제공. 
-
-엔드포인트별 태그 분류 및 스펙 엔드포인트 노출로 프론트엔드-백엔드 협업 효율화 경험.`,
-          lines: 9,
-          level: 2,
-        },
-      ],
-    },
-    {
       category: "Cloud · Hosting · Infrastructure",
       skills: [
         {
@@ -622,20 +560,6 @@ package.json으로 의존성 관리, npm scripts로 빌드/배포/개발 스크�
           level: 2,
         },
         {
-          id: 43,
-          title: "WebStorm",
-          description: `WebStorm 기반 개발 활용 경험 보유.`,
-          lines: 3,
-          level: 3,
-        },
-        {
-          id: 44,
-          title: "VS Code",
-          description: `VS Code 기반 개발 활용 경험 보유.`,
-          lines: 3,
-          level: 3,
-        },
-        {
           id: 45,
           title: "ClickUp",
           description: `Clickup 기반 협업 경험 보유.
@@ -656,16 +580,14 @@ package.json으로 의존성 관리, npm scripts로 빌드/배포/개발 스크�
       ],
     },
   ],
-  skillDescriptions: `|React · Next.js · React Native|를 기반으로 웹과 모바일 서비스를 개발하며, |TypeScript|와 |Tailwind|를 활용해 유지보수성과 일관성을 고려한 UI를 구현해왔습니다.
-또한 다양한 요구사항에 맞춰 |Radix, Shadcn, GSAP| 등 새로운 UI 도구를 적극적으로 도입해 인터랙션과 사용자 경험을 개선했습니다.
+  skillDescriptions: `|Next.js · React · React Native|을 기반으로 합니다. |TypeScript|에 익숙하며, |Tailwind CSS|를 이용한 빠르고 직관적인 개발을 선호합니다.
+|Tanstack Query · Zustand · React Context| 등 데이터 패치 및 전역상태 관리 툴들을 적극적으로 활용합니다. 
 
-|Elysia/Bun, Fastify/Node.js| 환경에서 API를 설계하고, |AWS(EC2, Lambda, Elastic Beanstalk, RDS, S3)|를 활용해 데이터베이스·인증·배포를 포함한 풀스택 개발 경험을 보유하고 있습니다.
-이 과정에서 |Drizzle · Prisma · Knex.js| ORM/Query Builder를 활용해 데이터 모델링과 쿼리 구조를 설계했으며, |Recoil · React Context API| 등을 통한 상태 관리와 |Swagger · Openapi-fetch| 기반의 API 문서화를 통해 프론트엔드–백엔드 간 협업 효율을 높였습니다.
+|Elysia/Bun, Fastify/Node.js| 환경에서 API를 설계하고, |AWS|를 활용한 배포 · 운영를 포함한 풀스택 개발 경험을 보유하고 있습니다.
 
-또한 |GitHub| 기반의 버전 관리와 |ClickUp · Figma|를 활용한 작업 관리 및 디자인 협업 등 협업 중심의 개발 프로세스에 익숙하며, |Cursor AI · Claude Code| 등 AI 툴을 활용한 생산성 향상에 관심을 가지고 있습니다.
+|Cursor AI · Claude Code| 등 AI Agent를 활용한 생산성 향상에 관심을 가지고 있습니다.
 
-서비스 품질과 개발 경험을 개선하기 위해 새로운 기술과 도구를 |지속적으로 도입|해왔으며, 
-문제 해결에 필요한 스킬이라면 |빠르게 학습하고 실무에 적용할 수 있는 학습 역량|을 갖추고 있습니다.
+새로운 기술과 도구를 |지속적으로 도입|해왔으며, 문제 해결에 필요한 스킬이라면 |빠르게 학습하고 실무에 적용할 수 있는 학습 역량|을 갖추고 있습니다.
 `,
   links: [
     {
